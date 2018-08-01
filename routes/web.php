@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* TODO:
+ * routes: static_pages users signup signin search edit 
+ */ 
