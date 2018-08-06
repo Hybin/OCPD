@@ -14,3 +14,5 @@
 /* TODO:
  * routes: static_pages users signup signin search edit 
  */ 
+Route::get('/', 'StaticPagesController@home')->name('home');
+
