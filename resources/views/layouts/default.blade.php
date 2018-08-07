@@ -14,7 +14,7 @@
             <a id="advanced-search">高级搜索</a>
             <div class="entrance">
                 <a id="signup">注册</a>
-                <a id="signin">登陆</a>
+                <a id="signin">登录</a>
             </div>
         </div>
     </header>
@@ -24,7 +24,7 @@
     </div>
 
     <footer>
-        <p id="copyright">© <a href="http://ccl.pku.edu.cn/" title="北京大学中国语言学研究中心" target="_blank">CCL</a> of <a href="http://www.pku.edu.cn/" title="北京大学" target="_blank">Peking University</a> 2018</p>
+        <p id="copyright">Powered by <a href="https://laravel.com"  target="_blank">Laravel</a> © <a href="http://ccl.pku.edu.cn/" title="北京大学中国语言学研究中心" target="_blank">CCL</a> of <a href="http://www.pku.edu.cn/" title="北京大学" target="_blank">Peking University</a> 2018</p>
     </footer>
 </body>
 </html>

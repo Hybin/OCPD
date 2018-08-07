@@ -8360,6 +8360,10 @@ textarea {
   resize: vertical;
 }
 
+button {
+  border: solid 1px;
+}
+
 .jumbotron {
   text-align: center;
 }
@@ -8396,12 +8400,28 @@ p {
   line-height: 1.7em;
 }
 
+.jumbotron {
+  text-align: center;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  width: 80%;
+  position: relative;
+  left: 10%;
+  top: 4em;
+}
+
+a {
+  text-decoration: none;
+  color: #e96378;
+}
+
 /* header */
 
 header {
   background-color: white;
-  -webkit-box-shadow: 0 0 0.5em #aeaeae;
-          box-shadow: 0 0 0.5em #aeaeae;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
 }
 
 header * {
@@ -8457,5 +8477,36 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+}
+
+/* main-page */
+
+div.main-page div.slogan {
+  margin-top: 2em;
+}
+
+div.main-page div.slogan * {
+  display: inline;
+  vertical-align: text-bottom;
+}
+
+div.main-page div.slogan img {
+  width: 75px;
+  height: 75px;
+}
+
+div.main-page form#simple-search input {
+  width: 70%;
+  height: 3em;
+  margin: 4em 0;
+}
+
+div.main-page form#simple-search button#submit {
+  background-color: #e96378;
+  color: white;
+  border-color: #e96378;
+  padding: 0.65em 2em;
+  position: relative;
+  left: -0.3em;
 }
 
