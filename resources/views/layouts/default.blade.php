@@ -13,8 +13,8 @@
         <div class="options">
             <a id="advanced-search">高级搜索</a>
             <div class="entrance">
-                <a id="signup">注册</a>
-                <a id="signin">登录</a>
+                <a href="{{ route('signup') }}" id="signup">注册</a>
+                <a href="{{ route('login') }}" id="signin">登录</a>
             </div>
         </div>
     </header>

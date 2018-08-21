@@ -8475,8 +8475,13 @@ header div.options a#signup {
 footer {
   position: absolute;
   bottom: 0;
+  background-color: #212121;
   width: 100%;
   text-align: center;
+}
+
+footer p {
+  margin: 1em 0 1em 0;
 }
 
 /* main-page */
@@ -8499,6 +8504,7 @@ div.main-page form#simple-search input {
   width: 70%;
   height: 3em;
   margin: 4em 0;
+  outline: none;
 }
 
 div.main-page form#simple-search button#submit {
@@ -8508,5 +8514,59 @@ div.main-page form#simple-search button#submit {
   padding: 0.65em 2em;
   position: relative;
   left: -0.3em;
+}
+
+div.main-page table#result-list {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  top: -2em;
+}
+
+div.main-page table#result-list th {
+  text-align: center;
+}
+
+div.main-page table#result-list td {
+  text-align: center;
+}
+
+div.main-page div#non-result {
+  text-align: left;
+  position: relative;
+  left: 10%;
+  width: 80%;
+}
+
+div.main-page div#non-result h4 {
+  color: #212121;
+  font-weight: bold;
+}
+
+div.main-page div#non-result p {
+  color: #aeaeae;
+  font-size: 1em;
+}
+
+div.main-page div#non-result div#buttons {
+  float: right;
+  position: relative;
+  top: -4em;
+}
+
+div.main-page div#non-result div#buttons button {
+  display: inline;
+  margin-left: 1em;
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  color: white;
+}
+
+div.main-page div#non-result div#buttons #back {
+  background-color: #212121;
+}
+
+div.main-page div#non-result div#buttons #advance {
+  background-color: #e96378;
 }
 

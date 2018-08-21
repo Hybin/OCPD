@@ -11,10 +11,14 @@
 |
 */
 
-/* TODO:
- * routes: static_pages users signup signin search edit 
- */ 
 Route::get('/', 'StaticPagesController@home')->name('home');
 
 Route::get('search', 'SearchEntityController@simple')->name('search.simple');
 Route::get('search/{keyword}', 'SearchEntityController@result')->name('search.result');
+
+Route::resource('users', 'UsersController');
+Route::get('signup', 'UsersController@create')->name('signup');
+
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');

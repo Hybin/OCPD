@@ -127,9 +127,13 @@ header {
 footer {
     position: absolute;
     bottom: 0;
-
+    background-color: #212121;
     width: 100%;
     text-align: center;
+
+    p {
+	margin: 1em 0 1em 0;
+    }
 }
 
 /* main-page */
@@ -153,6 +157,7 @@ div.main-page {
             width: 70%;
             height: 3em;
             margin: 4em 0; 
+	    outline: none;
         }
 
         button#submit {
@@ -164,6 +169,62 @@ div.main-page {
             left: -0.3em;
         }
     }
+
+    table#result-list {
+	width: 80%;
+	position: relative;
+	left: 10%;
+	top: -2em;
+
+	th {
+	    text-align: center;
+	}
+
+	td {
+	    text-align: center;
+	}
+    }
+
+
+    div#non-result {
+	text-align: left;
+	position: relative;
+	left: 10%;
+	width: 80%;
+
+   	h4 {
+       	    color: #212121;
+	    font-weight: bold;
+        }
+	
+	p {
+	    color: #aeaeae;
+	    font-size: 1em;
+	}
+
+	div#buttons {
+	    float: right;
+	    position: relative;
+	    top: -4em;
+		
+	    button {
+		display: inline;
+		margin-left: 1em;
+		padding: 0.25em 1.5em;
+		border-radius: 5px;
+		color: white;
+	    }
+
+	    #back {
+		background-color: #212121;
+	    }
+
+	    #advance {
+		background-color: $link-color;
+	    }
+	}
+    }
 }
+
 
 

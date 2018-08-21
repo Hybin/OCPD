@@ -16,7 +16,7 @@ class SearchEntityController extends Controller
 		return redirect()->route('search.result', $keyword);	
 	}
 
-	public function result()
+	public function result($keyword)
 	{
 		$items = Lexicon::where('cn_character', $keyword)->get();
 
