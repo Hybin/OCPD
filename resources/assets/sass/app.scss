@@ -171,59 +171,72 @@ div.main-page {
     }
 
     table#result-list {
-	width: 80%;
-	position: relative;
-	left: 10%;
-	top: -2em;
+		width: 80%;
+		position: relative;
+		left: 10%;
+		top: -2em;
 
-	th {
-	    text-align: center;
-	}
+		th {
+			text-align: center;
+		}
 
-	td {
-	    text-align: center;
-	}
+		td {
+			text-align: center;
+		}
     }
 
 
     div#non-result {
-	text-align: left;
-	position: relative;
-	left: 10%;
-	width: 80%;
+		text-align: left;
+		position: relative;
+		left: 10%;
+		width: 80%;
 
-   	h4 {
-       	    color: #212121;
-	    font-weight: bold;
+		h4 {
+		    color: #212121;
+			font-weight: bold;
         }
 	
-	p {
-	    color: #aeaeae;
-	    font-size: 1em;
-	}
+		p {
+			color: #aeaeae;
+			font-size: 1em;
+		}
 
-	div#buttons {
-	    float: right;
-	    position: relative;
-	    top: -4em;
+		div#buttons {
+			float: right;
+			position: relative;
+			top: -4em;
 		
-	    button {
-		display: inline;
-		margin-left: 1em;
-		padding: 0.25em 1.5em;
-		border-radius: 5px;
-		color: white;
-	    }
+			button {
+				display: inline;
+				margin-left: 1em;
+				padding: 0.25em 1.5em;
+				border-radius: 5px;
+				color: white;
+			}
 
-	    #back {
-		background-color: #212121;
-	    }
+			#back {
+				background-color: #212121;
+			}
 
-	    #advance {
-		background-color: $link-color;
-	    }
-	}
+			#advance {
+				background-color: $link-color;
+			}
+		}
     }
+	
+	img#error-img {
+		width: 300px;
+		position: relative;
+		left: 20%;
+		top: 5em;
+	}
+
+	p#error-msg {
+		color: $link-color;
+		position: relative;
+		top: 4em;
+	}
 }
 
 

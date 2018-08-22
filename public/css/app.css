@@ -8570,3 +8570,16 @@ div.main-page div#non-result div#buttons #advance {
   background-color: #e96378;
 }
 
+div.main-page img#error-img {
+  width: 300px;
+  position: relative;
+  left: 20%;
+  top: 5em;
+}
+
+div.main-page p#error-msg {
+  color: #e96378;
+  position: relative;
+  top: 4em;
+}
+
