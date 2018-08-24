@@ -56,7 +56,7 @@ class UsersController extends Controller
 		$this->authorize('index', $admin);
 		$users = User::all();
 
-		return view('users.index', compact('users');
+		return view('users.index', compact('users'));
 	}
 	
 	public function update(User $user, Request $request)

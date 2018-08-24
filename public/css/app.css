@@ -8583,3 +8583,25 @@ div.main-page p#error-msg {
   top: 4em;
 }
 
+div.main-page div.jumbotron form {
+  width: 40%;
+  position: relative;
+  left: 30%;
+}
+
+div.main-page div.jumbotron form input.form-control {
+  margin: 1em 0;
+}
+
+div.main-page div.jumbotron form button {
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  color: white;
+  background-color: #212121;
+}
+
+div.main-page div.jumbotron form h3 {
+  text-align: left;
+  padding-left: 30%;
+}
+

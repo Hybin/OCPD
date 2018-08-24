@@ -237,6 +237,28 @@ div.main-page {
 		position: relative;
 		top: 4em;
 	}
+
+	div.jumbotron form {
+		width: 40%;
+		position: relative;
+		left: 30%;
+
+		input.form-control {
+			margin: 1em 0;
+		}
+
+		button {
+			padding: 0.25em 1.5em;
+			border-radius: 5px;
+			color: white;
+			background-color: #212121;
+		}
+
+		h3 {
+			text-align: left;
+			padding-left: 30%;
+		}
+	}
 }
 
 
