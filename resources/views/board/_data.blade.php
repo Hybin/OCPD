@@ -1,4 +1,3 @@
-
 <table id="result-list">
     <tr>
 	<th style="text-align: left">ID</th>
@@ -18,18 +17,18 @@
     @foreach ($items as $item)
 	<tr>		
 	    <td style="text-align: left;">{{ $item->id }}</td>
-	    <td>{{ $item->cn_character }}</td>
+	    <td>{{ rawurldecode($item->cn_character) }}</td>
 	    <td>{{ $item->phonetic_elements }}</td>
 	    <td>{{ $item->rhyme_element }}</td>
-	    <td>{{ $item->reconstduction_wl }}</td>
-	    <td>{{ $item->reconstduction_lfg }}</td>
-	    <td>{{ $item->reconstduction_byp }}</td>
-	    <td>{{ $item->reconstduction_byps }}</td>
-	    <td>{{ $item->reconstduction_zzsf }}</td>
+	    <td>{{ $item->reconstruction_wl }}</td>
+	    <td>{{ $item->reconstruction_lfg }}</td>
+	    <td>{{ $item->reconstruction_byp }}</td>
+	    <td>{{ $item->reconstruction_byps }}</td>
+	    <td>{{ $item->reconstruction_zzsf }}</td>
 	    <td>{{ $item->tdaditional_pronunciation }}</td>
 	    <td>{{ $item->rhythm_status }}</td>
 	    <td>{{ $item->guangyun_position }}</td>
 	    <td style="text-align: right;">{{ $item->modern_pronunciation }}</td>
 	</tr>
     @endforeach
-<table>
+</table>

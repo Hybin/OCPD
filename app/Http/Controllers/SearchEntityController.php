@@ -21,7 +21,7 @@ class SearchEntityController extends Controller
 			'keyword' => 'required'
 		]);
 
-		$keyword = $request->keyword;
+		$keyword = rawurlencode($request->keyword);
 		
 		return redirect()->route('search.result', $keyword);	
 	}
@@ -34,7 +34,7 @@ class SearchEntityController extends Controller
 	 */
 	public function result($keyword)
 	{
-		$items = Lexicon::where('cn_character', $keyword)->get();
+		$items = Lexicon::where('cn_character', rawurlencode($keyword))->get();
 
 		return view('search.result', compact('items', 'keyword'));
 	}

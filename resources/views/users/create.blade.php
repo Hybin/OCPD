@@ -5,7 +5,7 @@
 	<div class="jumbotron" style="padding: 0;">
          <div id="register" class="signup-page">
              <h3>注册账户</h3>
-             <form method="POST" action="{{ route('users.store') }}">
+             <form method="POST" action="{{ route('users.store') }}" id="signup">
                  {{ csrf_field() }}
                  <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="用户名">
 				 <input type="text" name="email" class="form-control" value="{{ old('email') }}" placeholder="邮箱">
