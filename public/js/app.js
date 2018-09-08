@@ -762,6 +762,15 @@ module.exports = __webpack_require__(35);
 
 __webpack_require__(9);
 
+/**
+ * jQuery Library used.
+ */
+
+$(document).ready(function () {
+  // Make the value in empty cells of search results be "<空>"
+  $('td:empty').text('<空>');
+});
+
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {

@@ -7,4 +7,11 @@
 
 require('./bootstrap');
 
+/**
+ * jQuery Library used.
+ */
 
+$(document).ready(function () {
+	// Make the value in empty cells of search results be "<空>"
+	$('td:empty').text('<空>');
+})

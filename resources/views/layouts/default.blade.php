@@ -2,16 +2,16 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>@yield('title', '首页') - 上古拟音查询系统</title>
+    <title>@yield('title', '首頁') - 上古擬音查詢系統</title>
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/app.js"></script>
 </head>
 <body>
     <header class="navbar">
         <img id="logo" src="{{ asset('/images/logo-black.png') }}">
-        <h4>上古拟音查询系统</h4>
+        <h4>上古擬音查詢系統</h4>
         <div class="options">
-            <a id="advanced-search">高级搜索</a>
+            <a id="advanced-search">高級搜索</a>
 			@if (Auth::check())
 				<div class="user-badget">
 					@if (Auth::user()->position == 'admin-kannrimono-guanliyuan')
@@ -27,8 +27,8 @@
 				</div>
 			@else
 				<div class="entrance">
-					<a href="{{ route('signup') }}" id="signup">注册</a>
-					<a href="{{ route('login') }}" id="signin">登录</a>
+					<a href="{{ route('signup') }}" id="signup">註冊</a>
+					<a href="{{ route('login') }}" id="signin">登錄</a>
 				</div>
 			@endif
         </div>

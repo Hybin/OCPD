@@ -8488,7 +8488,7 @@ header div.user-badget p {
 /* footer */
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: #212121;
   width: 100%;
@@ -8532,10 +8532,9 @@ div.main-page form#simple-search button#submit {
 }
 
 div.main-page table#result-list {
-  width: 80%;
+  width: 90%;
   position: relative;
-  left: 10%;
-  top: -2em;
+  left: 5%;
 }
 
 div.main-page table#result-list th {
@@ -8549,8 +8548,8 @@ div.main-page table#result-list td {
 div.main-page div#non-result {
   text-align: left;
   position: relative;
-  left: 10%;
-  width: 80%;
+  left: 5%;
+  width: 90%;
 }
 
 div.main-page div#non-result h4 {
@@ -8583,6 +8582,35 @@ div.main-page div#non-result div#buttons #back {
 
 div.main-page div#non-result div#buttons #advance {
   background-color: #e96378;
+}
+
+div.main-page div#search-condition {
+  text-align: left;
+  position: relative;
+  left: 5%;
+  width: 90%;
+}
+
+div.main-page div#search-condition * {
+  display: inline;
+}
+
+div.main-page div#search-condition p {
+  font-size: 1em;
+}
+
+div.main-page div#search-condition ul {
+  list-style: none;
+  padding: 0;
+}
+
+div.main-page div#search-condition ul li {
+  display: inline;
+  background-color: #e96378;
+  color: white;
+  padding: 0.15em 1.5em;
+  margin-right: 0.5em;
+  border-radius: 2.5px;
 }
 
 div.main-page img#error-img {
@@ -8641,6 +8669,7 @@ div.main-page div.jumbotron#signup-card form#signup a {
 }
 
 div.main-page div.jumbotron#signin-card {
+  padding: 0;
   width: 30%;
   left: 35%;
 }
