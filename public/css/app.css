@@ -8470,6 +8470,21 @@ header div.options a#signup {
   margin-right: 1em;
 }
 
+header div.user-badget {
+  float: right;
+}
+
+header div.user-badget img {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+}
+
+header div.user-badget p {
+  margin-right: 1em;
+  color: #e96378;
+}
+
 /* footer */
 
 footer {
@@ -8583,25 +8598,106 @@ div.main-page p#error-msg {
   top: 4em;
 }
 
-div.main-page div.jumbotron form#signup {
-  width: 40%;
-  position: relative;
-  left: 30%;
+div.main-page div.jumbotron#signup-card {
+  padding: 0;
+  width: 30%;
+  left: 35%;
 }
 
-div.main-page div.jumbotron form#signup input.form-control {
+div.main-page div.jumbotron#signup-card div.signup-page {
+  padding: 3em 0 4em 0;
+}
+
+div.main-page div.jumbotron#signup-card h3 {
+  text-align: left;
+  padding-left: 15%;
+}
+
+div.main-page div.jumbotron#signup-card form#signup {
+  width: 70%;
+  position: relative;
+  left: 15%;
+}
+
+div.main-page div.jumbotron#signup-card form#signup input.form-control {
   margin: 1em 0;
 }
 
-div.main-page div.jumbotron form#signup button {
+div.main-page div.jumbotron#signup-card form#signup button {
   padding: 0.25em 1.5em;
   border-radius: 5px;
   color: white;
   background-color: #212121;
+  margin-right: 1em;
 }
 
-div.main-page div.jumbotron form#signup h3 {
+div.main-page div.jumbotron#signup-card form#signup a {
+  text-decoration: none;
+  background-color: #e96378;
+  color: white;
+  padding: 0.45em 1.5em;
+  border-radius: 5px;
+  margin-left: 1em;
+}
+
+div.main-page div.jumbotron#signin-card {
+  width: 30%;
+  left: 35%;
+}
+
+div.main-page div.jumbotron#signin-card div.signin-page {
+  padding: 1em 0;
+}
+
+div.main-page div.jumbotron#signin-card img {
+  width: 120px;
+  height: 120px;
+}
+
+div.main-page div.jumbotron#signin-card h3 {
   text-align: left;
-  padding-left: 30%;
+  padding-left: 15%;
+}
+
+div.main-page div.jumbotron#signin-card form {
+  width: 70%;
+  position: relative;
+  left: 15%;
+}
+
+div.main-page div.jumbotron#signin-card form label {
+  margin: 0;
+}
+
+div.main-page div.jumbotron#signin-card form input.form-control {
+  margin: 1em 0;
+}
+
+div.main-page div.jumbotron#signin-card form button {
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  color: white;
+  background-color: #212121;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+div.main-page div.jumbotron#signin-card form a {
+  text-decoration: none;
+  background-color: #e96378;
+  color: white;
+  padding: 0.45em 1.5em;
+  border-radius: 5px;
+  margin-left: 1em;
+}
+
+div.main-page div.jumbotron#signin-card hr {
+  width: 70%;
+}
+
+div.main-page div.jumbotron#signin-card p {
+  text-align: left;
+  font-size: 1em;
+  padding-left: 15%;
 }
 

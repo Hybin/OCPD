@@ -21,7 +21,7 @@ class SearchEntityController extends Controller
 			'keyword' => 'required'
 		]);
 
-		$keyword = rawurlencode($request->keyword);
+		$keyword = $request->keyword;
 		
 		return redirect()->route('search.result', $keyword);	
 	}

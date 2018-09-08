@@ -120,6 +120,21 @@ header {
             margin-right: 1em;
         }
     }
+
+	div.user-badget {
+        float: right;
+
+		img {
+			width: 25px;
+			height: 25px;
+			border-radius: 100%;
+		}
+		
+		p {
+			margin-right: 1em;
+			color: $link-color;
+		}
+	}
 }
 
 /* footer */
@@ -238,28 +253,111 @@ div.main-page {
 		top: 4em;
 	}
 
-	div.jumbotron form#signup {
-		width: 40%;
-		position: relative;
-		left: 30%;
 
-		input.form-control {
-			margin: 1em 0;
-		}
+	div.jumbotron#signup-card {
+		padding: 0;
+		width: 30%;
+		left: 35%;
 
-		button {
-			padding: 0.25em 1.5em;
-			border-radius: 5px;
-			color: white;
-			background-color: #212121;
+		div.signup-page {
+			padding: 3em 0 4em 0;
 		}
 
 		h3 {
 			text-align: left;
-			padding-left: 30%;
+			padding-left: 15%;
+		}
+		
+		form#signup {
+			width: 70%;
+			position: relative;
+			left: 15%;
+
+			input.form-control {
+				margin: 1em 0;
+			}
+
+			button {
+				padding: 0.25em 1.5em;
+				border-radius: 5px;
+				color: white;
+				background-color: #212121;
+				margin-right: 1em;
+			}
+
+			a {
+				text-decoration: none;
+				background-color: $link-color;
+				color: white;
+				padding: 0.45em 1.5em;
+				border-radius: 5px;
+				margin-left: 1em;
+			}
+		}
+	}
+
+	div.jumbotron#signin-card {
+		width: 30%;
+		left: 35%;
+
+		div.signin-page {
+			padding: 1em 0;
+		}
+
+		img {
+			width: 120px;
+			height: 120px;
+		}
+
+		h3 {
+			text-align: left;
+			padding-left: 15%;
+		}
+
+		form {
+			width: 70%;
+			position: relative;
+			left: 15%;
+
+			label {
+				margin: 0;
+			}
+
+			input.form-control {
+				margin: 1em 0;
+			}
+
+			button {
+				padding: 0.25em 1.5em;
+				border-radius: 5px;
+				color: white;
+				background-color: #212121;
+				margin-right: 1em;
+				margin-top: 1em;
+			}
+
+			a {
+				text-decoration: none;
+				background-color: $link-color;
+				color: white;
+				padding: 0.45em 1.5em;
+				border-radius: 5px;
+				margin-left: 1em;
+			}
+		}
+
+		hr {
+			width: 70%;
+		}
+
+		p {
+			text-align: left;
+			font-size: 1em;
+			padding-left: 15%;
 		}
 	}
 }
+
 
 
 

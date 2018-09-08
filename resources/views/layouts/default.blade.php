@@ -12,10 +12,25 @@
         <h4>上古拟音查询系统</h4>
         <div class="options">
             <a id="advanced-search">高级搜索</a>
-            <div class="entrance">
-                <a href="{{ route('signup') }}" id="signup">注册</a>
-                <a href="{{ route('login') }}" id="signin">登录</a>
-            </div>
+			@if (Auth::check())
+				<div class="user-badget">
+					@if (Auth::user()->position == 'admin-kannrimono-guanliyuan')
+						<a href="{{ route('users.index') }}"><p>✻ {{ Auth::user()->name }}</p></a>
+					@else
+						<p>✻ {{ Auth::user()->name }}</p>
+					@endif
+					<form action="{{ route('logout') }}" method="POST">
+						{{ csrf_field() }}
+						{{ method_field('DELETE') }}
+						<input type="image" src="{{ asset('/images/logout.png') }}" width="25px" height="25px" alt="submit" />
+					</form>
+				</div>
+			@else
+				<div class="entrance">
+					<a href="{{ route('signup') }}" id="signup">注册</a>
+					<a href="{{ route('login') }}" id="signin">登录</a>
+				</div>
+			@endif
         </div>
     </header>
 

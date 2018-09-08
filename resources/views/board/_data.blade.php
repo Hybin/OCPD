@@ -25,7 +25,7 @@
 	    <td>{{ $item->reconstruction_byp }}</td>
 	    <td>{{ $item->reconstruction_byps }}</td>
 	    <td>{{ $item->reconstruction_zzsf }}</td>
-	    <td>{{ $item->tdaditional_pronunciation }}</td>
+	    <td>{{ $item->traditional_pronunciation }}</td>
 	    <td>{{ $item->rhythm_status }}</td>
 	    <td>{{ $item->guangyun_position }}</td>
 	    <td style="text-align: right;">{{ $item->modern_pronunciation }}</td>
