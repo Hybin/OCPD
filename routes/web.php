@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'StaticPagesController@home')->name('home');
+Route::get('/back', 'PagesController@back')->name('back');
 
 Route::get('search', 'SearchEntityController@simple')->name('search.simple');
 Route::get('search/{keyword}', 'SearchEntityController@result')->name('search.result');

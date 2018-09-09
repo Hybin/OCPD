@@ -9,6 +9,17 @@ use App\Models\Lexicon;
 
 class SearchEntityController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth', [
+			'except' => []
+		]);
+
+		$this->middleware('guest', [
+			'only' => ['simple', 'result']
+		]);
+	}
+	
 	/**
 	 * simple
 	 * get the keyword of simple search
@@ -38,4 +49,14 @@ class SearchEntityController extends Controller
 
 		return view('search.result', compact('items', 'keyword'));
 	}
+
+	/**
+	 * advance
+	 * return the page of advance page
+	 */
+	public function advance()
+	{
+		return view('static_pages.advance');
+	}
+	
 }

@@ -11,7 +11,7 @@
         <img id="logo" src="{{ asset('/images/logo-black.png') }}">
         <h4>上古擬音查詢系統</h4>
         <div class="options">
-            <a id="advanced-search">高級搜索</a>
+            <a id="advanced-search" href="{{ route('search.advance') }}">高級搜索</a>
 			@if (Auth::check())
 				<div class="user-badget">
 					@if (Auth::user()->position == 'admin-kannrimono-guanliyuan')
