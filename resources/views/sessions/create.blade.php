@@ -12,10 +12,10 @@
 				{{ csrf_field() }}
 				<input type="text" name="email" class="form-control" value="{{ old('email') }}" placeholder="郵箱">
 				<input type="password" name="password" class="form-control" value="{{ old('password') }}" placeholder="密碼">
-				<label style="float: left;"><input type="checkbox" name="remember">記住我</label>
+				<label style="float: left;"><input type="checkbox" name="remember" style="margin-right: 0.5em;">記住我</label>
 				<br>
 				<button type="submit" id="submit">登錄</button>
-				<a href="{{ route('back') }}" id="cancel">返回</a>
+				<a href="/" id="cancel">返回</a>
 			</form>
 			<hr>
 			<p>還沒有賬號？<a href="{{ route('signup') }}">現在註冊</a></p>

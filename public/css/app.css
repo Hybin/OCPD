@@ -8352,6 +8352,10 @@ button.close {
 
 /* universal */
 
+body {
+  overflow-y: scroll;
+}
+
 section {
   overflow: auto;
 }
@@ -8500,6 +8504,10 @@ footer p {
 }
 
 /* main-page */
+
+div.main-page {
+  margin-bottom: 12em;
+}
 
 div.main-page div.slogan {
   margin-top: 2em;
@@ -8728,5 +8736,90 @@ div.main-page div.jumbotron#signin-card p {
   text-align: left;
   font-size: 1em;
   padding-left: 15%;
+}
+
+div.main-page div#advance-search-page h3 {
+  text-align: left;
+  padding-left: 5%;
+}
+
+div.main-page div#advance-search-page p.marks {
+  text-align: left;
+  position: relative;
+  left: 5%;
+}
+
+div.main-page div#advance-search-page form {
+  width: 90%;
+  position: relative;
+  left: 5%;
+}
+
+div.main-page div#advance-search-page form p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+div.main-page div#advance-search-page form input.bar {
+  width: 90%;
+  margin: 1em 0;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border-color: rgba(255, 255, 255, 0);
+  height: 3em;
+  outline: none;
+  padding-left: 0.5em;
+}
+
+div.main-page div#advance-search-page form select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  margin: 0.5em 0 1em 0em;
+  width: 29.75%;
+  padding-left: 1em;
+  height: 3em;
+}
+
+div.main-page div#advance-search-page form select select::-ms-expand {
+  display: none;
+}
+
+div.main-page div#advance-search-page form div#range {
+  text-align: left;
+  position: relative;
+  left: 5%;
+}
+
+div.main-page div#advance-search-page form div#range input {
+  display: inline;
+}
+
+div.main-page div#advance-search-page form div#range label {
+  margin-right: 1em;
+}
+
+div.main-page div#advance-search-page form button {
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  color: white;
+  background-color: #212121;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+div.main-page div#advance-search-page form a {
+  text-decoration: none;
+  background-color: #e96378;
+  color: white;
+  padding: 0.45em 1.5em;
+  border-radius: 5px;
+  margin-left: 1em;
 }
 
