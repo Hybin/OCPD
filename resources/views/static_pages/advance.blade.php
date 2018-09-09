@@ -4,11 +4,11 @@
 @section('content')
 	<div class="jumbotron" id="advance-search-page">
 		<h3>高級搜索</h3>
-		<form method="GET" action="{{ route('search.advance') }}" id="advance-search">
+		<form method="GET" action="{{ route('advance.results') }}" id="advance-search">
 			<p id="rhm-stats" class="marks">按音韻地位查詢</p>
-			<input type="text" name="initial" placeholder="声母" class="bar" id="initial"><br>
-			<input type="text" name="final" placeholder="韻母" class="bar" id="final"><br>
-			<input type="text" name="tail" placeholder="攝" class="bar" id="tail"><br>
+			<input type="text" name="initial" placeholder="輸入声母進行查詢" class="bar" id="initial"><br>
+			<input type="text" name="final" placeholder="輸入韻母進行查詢" class="bar" id="final"><br>
+			<input type="text" name="tail" placeholder="輸入攝进行查詢" class="bar" id="tail"><br>
 			<select name="kaihe" class="selection" id="kaihe">
 				<option disabled selected>開合...</option>
 				<option>開</option>
@@ -29,9 +29,9 @@
 				<option>入</option>
 			</select>
 			<p id="others" class="marks">按其他條件查詢</p>
-			<input type="text" name="shengfu" placeholder="声符" class="bar" id="shengfu"><br>
-			<input type="text" name="yunbu" placeholder="韻部" class="bar" id="yunbu"><br>
-			<input type="text" name="ipa" placeholder="擬音（國際音標）" class="bar" id="ipa"><br>
+			<input type="text" name="shengfu" placeholder="輸入声符進行查詢" class="bar" id="shengfu"><br>
+			<input type="text" name="yunbu" placeholder="輸入韻部進行查詢" class="bar" id="yunbu"><br>
+			<input type="text" name="ipa" placeholder="輸入擬音（國際音標）進行查詢" class="bar" id="ipa"><br>
 			<p id="range" class="marks">設定查詢範圍</p>
 			<div id="range">
 				<input type="checkbox" name="onomatope[]" value="wl" class="checkbox" id="wl">
@@ -45,7 +45,7 @@
                 <input type="checkbox" name="onomatope[]" value="zzsf" class="checkbox" id="zzsf">
 				<label for="zzsf">郑张尚芳</label>
 			</div>
-			<button type="submit" id="submit">查詢</button>
+			<button disabled type="submit" id="submit">查詢</button>
 			<a href="/" id="back">返回</a>
 		</form>
 	</div>

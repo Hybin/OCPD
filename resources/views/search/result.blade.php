@@ -8,7 +8,7 @@
 		<p>總計 {{ count($items)  }} 條結果</p>
 		<div id="buttons">
 			<a href="{{ route('home') }}"><button id="back">返回主頁</button></a>
-			<button id="advance">高級搜索</button>
+			<a href="{{ route('search.advance') }}"><button id="advance">高級搜索</button></a>
 		</div>
     </div>
 	<div id="search-condition">

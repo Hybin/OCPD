@@ -16,13 +16,7 @@ Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('search', 'SearchEntityController@simple')->name('search.simple');
 Route::get('search/{keyword}', 'SearchEntityController@result')->name('search.result');
 Route::get('advance', 'SearchEntityController@advance')->name('search.advance');
-/**
- * TODO
- * Create a route for
- * search results page of Advance Search
- * by optional paramaters e.g. {attr?} 
- * Don't remember to set default value for optional paramater!!!
- */
+Route::get('advance/results', 'SearchEntityController@results')->name('advance.results');
 
 Route::resource('users', 'UsersController');
 Route::get('signup', 'UsersController@create')->name('signup');
