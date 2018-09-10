@@ -2,7 +2,7 @@
 @section('title', '搜索結果')
 
 @section('content')
-<div class="jumbotron" style="height: 48em;">
+<div class="jumbotron" style="height: 52em;">
     <div id="non-result">
 		<h4>搜索結果</h4>
 		<p>總計 {{ count($items)  }} 條結果</p>
@@ -22,6 +22,16 @@
 						<li>{{ $key }}：{{ $condition }}</li>
 					@endif
 				@endforeach
+			@endif
+		</ul><br>
+		<p>显示范围：</p>
+		<ul id="range">
+			@if (isset($range) && count($range) > 0)
+				@foreach ($range as $key => $val)
+					<li>{{ $key }}</li>
+				@endforeach
+			@else
+				<li>無</li>
 			@endif
 		</ul>
 	</div>

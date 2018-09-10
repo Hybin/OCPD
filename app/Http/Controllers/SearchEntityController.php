@@ -76,6 +76,34 @@ class SearchEntityController extends Controller
 		}
 		return $temp;
 	}
+
+	/**
+	 * mark
+	 * mark the range value with Chinese key
+	 *
+	 * @param mixed $array
+	 */
+	protected function mark($array)
+	{
+		$temp = array();
+		if (count($array) > 0) {
+			foreach ($array as $val) {
+				if ($val == 'wl'):
+				   	$temp['王力'] = 'reconstruction_' . $val;
+				elseif ($val == 'lfg'):
+					$temp['李方桂'] = 'reconstruction_' . $val;	
+				elseif ($val == 'byp'):
+					$temp['白一平'] = 'reconstruction_' . $val;	
+				elseif ($val == 'byps'):
+					$temp['白一平-沙加爾'] = 'reconstruction_' . $val;	
+				elseif ($val == 'zzsf'):
+					$temp['鄭張尚芳'] = 'reconstruction_' . $val;	
+				endif;
+			}
+		}
+		return $temp;
+	}
+	
 	
 	/**
 	 * results
@@ -144,12 +172,9 @@ class SearchEntityController extends Controller
 							'等' => $request->deng, '声調' => $request->tone, '攝' => $request->tail,
 							'声符' => $request->shengfu, '韻部' => $request->yunbu, '拟音' => $request->ipa);
 
-		/**
-		 * TODO
-		 * Get the range info and limit the views
-		 */
+		$range = SearchEntityController::mark($request->onomatope);
 
-		return view('search.result', compact('items', 'conditions'));
+		return view('search.result', compact('items', 'conditions', 'range'));
 	}
 	
 }
