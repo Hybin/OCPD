@@ -222,6 +222,10 @@ div.main-page {
 			font-size: 1em;
 		}
 
+		a {
+			text-decoration: none;
+		}
+
 		div#buttons {
 			float: right;
 			position: relative;
@@ -267,7 +271,7 @@ div.main-page {
 				display: inline;
 				background-color: $link-color;
 				color: white;
-				padding: 0.15em 1.5em;
+				padding: 0.15em 1em;
 				margin-right: 0.5em;
 				border-radius: 2.5px;
 			}
@@ -277,7 +281,7 @@ div.main-page {
 	img#error-img {
 		width: 300px;
 		position: relative;
-		left: 20%;
+		left: 15%;
 		top: 5em;
 	}
 

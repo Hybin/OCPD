@@ -77,6 +77,12 @@ class SearchEntityController extends Controller
 		return $temp;
 	}
 	
+	/**
+	 * results
+	 * search with multiple conditions
+	 *
+	 * @param Request $request
+	 */
 	public function results(Request $request)
 	{
 		$rhyme_status = array(
@@ -88,13 +94,44 @@ class SearchEntityController extends Controller
 			$request->tail        // 攝
 		);
 
-		$rs_value = '%' . implode('%', SearchEntityController::denull($rhyme_status)) . '%';   // Search with rhyme status(音韵地位)
+		$rs_conditions = SearchEntityController::denull($rhyme_status);
 
-		$items = Lexicon::where(
+		if (count($rs_conditions) > 0)
+			$rs_value = '%' . implode('%', $rs_conditions) . '%';   // Search with rhyme status(音韵地位)
+		else
+			$rs_value='';
+
+		if (strlen($request->ipa) > 0)
+			$ipa_value = '%' . $request->ipa . '%';
+		else
+			$ipa_value = '';
+
+		$shengfu = $request->shengfu;
+		$yunbu = $request->yunbu;
+
+		if (strlen($shengfu) == 0)
+			$shengfu = '';
+
+		if (strlen($yunbu) == 0)
+			$yunbu = '';
+
+		$items = Lexicon::where([
 			['rhythm_status', 'like', $rs_value],
-		)->get();
+			['phonetic_element', '=', $shengfu],
+			['rhyme_element', '=', $yunbu],
+		])->where(function ($query) use($ipa_value) {
+			$query->where('reconstruction_wl', 'like', $ipa_value)
+				  ->orWhere('reconstruction_lfg', 'like', $ipa_value)
+				  ->orWhere('reconstruction_byp', 'like', $ipa_value)
+				  ->orWhere('reconstruction_byps', 'like', $ipa_value)
+				  ->orWhere('reconstruction_zzsf', 'like', $ipa_value);
+		})->get();
 
-		return $rs_value;
+		$conditions = array('声母' => $request->initial, '韻母' => $request->final, '開合' => $request->kaihe,
+							'等' => $request->deng, '声調' => $request->tone, '攝' => $request->tail,
+							'声符' => $request->shengfu, '韻部' => $request->yunbu, '拟音' => $request->ipa);
+
+		return view('search.result', compact('items', 'conditions'));
 	}
 	
 }

@@ -772,7 +772,7 @@ $(document).ready(function () {
 
 	// Disable the submit button in advance search page if no input
 	$('div.jumbotron').delegate('input', 'mouseleave', function () {
-		if ($('input#initial').val().trim().length == 0 && $('input#final').val().trim().length == 0 && $('input#tail').val().trim().length == 0 && $('input#shengfu').val().trim().length == 0 && $('input#yunbu').val().trim().length == 0 && $('input#ipa').val().trim().length == 0) {
+		if ($('input#initial').val().trim().length == 0 && $('input#final').val().trim().length == 0 && $('input#tail').val().trim().length == 0 && $('input#shengfu').val().trim().length == 0 && $('input#yunbu').val().trim().length == 0 && $('input#ipa').val().trim().length == 0 && $('select#kaihe option:selected').text() == "開合..." && $('select#deng option:selected').text() == "等..." && $('select#tone option:selected').text() == "声調...") {
 			$('div#advance-search-page button').prop('disabled', true);
 			$('div#advance-search-page button').css('background-color', '#616161');
 		} else {

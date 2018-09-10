@@ -14,14 +14,22 @@
 	<div id="search-condition">
 		<p>搜索條件：</p>
 		<ul id="conditons">
-			<li>漢字：{{ rawurldecode($keyword) }}</li>
+			@if (isset($keyword))
+				<li>漢字：{{ rawurldecode($keyword) }}</li>
+			@else
+				@foreach ($conditions as $key => $condition)
+					@if (strlen($condition) > 0)
+						<li>{{ $key }}：{{ $condition }}</li>
+					@endif
+				@endforeach
+			@endif
 		</ul>
 	</div>
     @if (count($items) > 0)
 		@include('board._data')
     @else
 		<img src="{{ asset('/images/bear.png') }}" id="error-img">
-		<p id="error-msg">我们暫未收錄“{{ rawurldecode($keyword) }}”哦！</p>
+		<p id="error-msg">古人的發音太神秘啦！我們也在尋找...</p>
     @endif
 </div>
 @endsection

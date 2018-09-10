@@ -8570,6 +8570,10 @@ div.main-page div#non-result p {
   font-size: 1em;
 }
 
+div.main-page div#non-result a {
+  text-decoration: none;
+}
+
 div.main-page div#non-result div#buttons {
   float: right;
   position: relative;
@@ -8616,7 +8620,7 @@ div.main-page div#search-condition ul li {
   display: inline;
   background-color: #e96378;
   color: white;
-  padding: 0.15em 1.5em;
+  padding: 0.15em 1em;
   margin-right: 0.5em;
   border-radius: 2.5px;
 }
@@ -8624,7 +8628,7 @@ div.main-page div#search-condition ul li {
 div.main-page img#error-img {
   width: 300px;
   position: relative;
-  left: 20%;
+  left: 15%;
   top: 5em;
 }
 
