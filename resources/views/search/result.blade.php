@@ -2,7 +2,7 @@
 @section('title', '搜索結果')
 
 @section('content')
-<div class="jumbotron" style="top: 2em; height: 40em;">
+<div class="jumbotron" style="height: 48em;">
     <div id="non-result">
 		<h4>搜索結果</h4>
 		<p>總計 {{ count($items)  }} 條結果</p>

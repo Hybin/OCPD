@@ -8539,10 +8539,17 @@ div.main-page form#simple-search button#submit {
   left: -0.3em;
 }
 
+div.main-page div#result-tab {
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+}
+
 div.main-page table#result-list {
   width: 90%;
   position: relative;
   left: 5%;
+  top: 1em;
 }
 
 div.main-page table#result-list th {
@@ -8614,6 +8621,7 @@ div.main-page div#search-condition p {
 div.main-page div#search-condition ul {
   list-style: none;
   padding: 0;
+  white-space: nowrap;
 }
 
 div.main-page div#search-condition ul li {

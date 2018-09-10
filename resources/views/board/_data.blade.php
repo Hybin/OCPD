@@ -1,3 +1,4 @@
+<div id="result-tab">
 <table id="result-list">
     <tr>
 	<th style="text-align: left">ID</th>
@@ -18,7 +19,7 @@
 	<tr>		
 	    <td style="text-align: left;">{{ $item->id }}</td>
 		<td>{{ rawurldecode($item->cn_character) }}</td>
-		<td>{{ $item->phonetic_elements }}</td>
+		<td>{{ $item->phonetic_element }}</td>
 		<td>{{ $item->rhyme_element }}</td>
 		<td>{{ $item->reconstruction_wl }}</td>
 	    <td>{{ $item->reconstruction_lfg }}</td>
@@ -32,3 +33,4 @@
 	</tr>
     @endforeach
 </table>
+</div>
