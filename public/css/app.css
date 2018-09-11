@@ -8497,6 +8497,7 @@ footer {
   background-color: #212121;
   width: 100%;
   text-align: center;
+  z-index: 2;
 }
 
 footer p {
@@ -8561,6 +8562,101 @@ div.main-page table#result-list td {
   text-align: center;
 }
 
+div.main-page div#continue-card {
+  width: 30%;
+  position: absolute;
+  left: 56%;
+  top: 20em;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  z-index: 2;
+}
+
+div.main-page div#continue-card h4 {
+  background-color: #212121;
+  padding: 1em 1em;
+  margin: 0;
+}
+
+div.main-page div#continue-card form {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  padding: 2em 0;
+}
+
+div.main-page div#continue-card form p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+div.main-page div#continue-card form input.bar {
+  width: 100%;
+  margin: 0.5em 0;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border-color: rgba(255, 255, 255, 0);
+  height: 2.5em;
+  outline: none;
+  padding-left: 0.5em;
+}
+
+div.main-page div#continue-card form select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  margin: 0.5em 0 1em 0em;
+  width: 32.5%;
+  padding-left: 1em;
+  height: 2.5em;
+}
+
+div.main-page div#continue-card form select select::-ms-expand {
+  display: none;
+}
+
+div.main-page div#continue-card form div#range {
+  text-align: left;
+  position: relative;
+}
+
+div.main-page div#continue-card form div#range input {
+  display: inline;
+}
+
+div.main-page div#continue-card form div#range label {
+  margin-right: 0.75em;
+}
+
+div.main-page div#continue-card form div#button {
+  width: 100%;
+  text-align: center;
+}
+
+div.main-page div#continue-card form button {
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+div.main-page div#continue-card form button#submit {
+  background-color: #212121;
+  color: white;
+}
+
+div.main-page div#continue-card form button#close {
+  background-color: #e96378;
+  color: white;
+}
+
 div.main-page div#non-result {
   text-align: left;
   position: relative;
@@ -8594,6 +8690,12 @@ div.main-page div#non-result div#buttons button {
   padding: 0.25em 1.5em;
   border-radius: 5px;
   color: white;
+}
+
+div.main-page div#non-result div#buttons #continue {
+  background-color: white;
+  border: solid 1px #949494;
+  color: #949494;
 }
 
 div.main-page div#non-result div#buttons #back {
@@ -8636,7 +8738,6 @@ div.main-page div#search-condition ul li {
 div.main-page img#error-img {
   width: 300px;
   position: relative;
-  left: 15%;
   top: 5em;
 }
 

@@ -1,7 +1,7 @@
 <div id="result-tab">
 <table id="result-list">
     <tr>
-	<th style="text-align: left">ID</th>
+	<th style="text-align: left">序號</th>
 	<th>漢字</th>
 	<th>聲符</th>
 	<th>韻部</th>
@@ -12,12 +12,12 @@
 	@endif
 	<th>廣韻反切</th>
 	<th>音韻地位</th>
-	<th>廣韻页码</th>
+	<th>廣韻頁碼</th>
 	<th style="text-align: right">今讀</th>
     </tr>
-    @foreach ($items as $item)
+    @foreach ($items as $key =>  $item)
 	<tr>		
-	    <td style="text-align: left;">{{ $item->id }}</td>
+	    <td style="text-align: left;">{{ $key + 1 }}</td>
 		<td>{{ rawurldecode($item->cn_character) }}</td>
 		<td>{{ $item->phonetic_element }}</td>
 		<td>{{ $item->rhyme_element }}</td>

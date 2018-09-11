@@ -10,6 +10,10 @@ require('./bootstrap');
 /**
  * jQuery Library used.
  */
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+import 'jquery-ui/ui/widgets/draggable.js';
 
 $(document).ready(function () {
 	// Make the value in empty cells of search results be "<空>"
@@ -33,4 +37,10 @@ $(document).ready(function () {
 			$('div#advance-search-page button').css('background-color', '#212121');
 		}
 	});
+
+	// Make the continue-search card draggable
+	$(function () {
+		$('div.search-card').draggable();
+	})	
+
 })

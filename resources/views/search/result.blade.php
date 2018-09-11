@@ -2,13 +2,14 @@
 @section('title', '搜索結果')
 
 @section('content')
+@include('popups.find')
 <div class="jumbotron" style="height: 52em;">
     <div id="non-result">
 		<h4>搜索結果</h4>
 		<p>總計 {{ count($items)  }} 條結果</p>
 		<div id="buttons">
+			<button id="continue">继续查询</button>
 			<a href="{{ route('home') }}"><button id="back">返回主頁</button></a>
-			<a href="{{ route('search.advance') }}"><button id="advance">高級搜索</button></a>
 		</div>
     </div>
 	<div id="search-condition">
