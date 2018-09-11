@@ -42,7 +42,7 @@
 			<label for="zzsf">郑张尚芳</label>
 		</div>
 		<div id="button">
-			<button disabled type="submit" id="submit">查詢</button>
+			<button type="submit" id="submit">查詢</button>
 			<button id="close">關閉</button>
 		</div>
 	</form>

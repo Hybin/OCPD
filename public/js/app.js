@@ -11930,9 +11930,43 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 		}
 	});
 
+	// Show continue-search card
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('button#continue').click(function () {
+		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.search-card').show();
+	});
+
+	// Fill in the blanks of continue search card
+	var dict = { '声母': 'initial', '韻母': 'final', '開合': 'kaihe', '等': 'deng',
+		'声調': 'tone', '攝': 'tail', '声符': 'shengfu', '韻部': 'yunbu',
+		'拟音': 'ipa', '王力': 'wl', '李方桂': 'lfg', '白一平': 'byp',
+		'白一平-沙加爾': 'byps', '鄭張尚芳': 'zzsf' };
+
+	var conditions = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('ul#conditions li').toArray(),
+	    ranges = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('ul#range li').toArray();
+	conditions.forEach(function (condition) {
+		var avm = condition.textContent.split('：');
+
+		if (dict[avm[0]] == 'deng' || dict[avm[0]] == 'kaihe' || dict[avm[0]] == 'tone') {
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('select#' + dict[avm[0]]).val(avm[1]);
+		} else {
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#' + dict[avm[0]]).val(avm[1]);
+		}
+	});
+
+	ranges.forEach(function (range) {
+		var avm = range.textContent;
+
+		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#' + dict[avm]).prop('checked', true);
+	});
+
 	// Make the continue-search card draggable
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
 		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.search-card').draggable();
+	});
+
+	// Close the card
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('button#close').click(function () {
+		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.search-card').hide();
 	});
 });
 

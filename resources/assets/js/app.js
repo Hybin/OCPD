@@ -38,9 +38,41 @@ $(document).ready(function () {
 		}
 	});
 
+	// Show continue-search card
+	$('button#continue').click(function () {
+		$('div.search-card').show();
+	});
+
+	// Fill in the blanks of continue search card
+	let dict = {'声母': 'initial', '韻母': 'final', '開合': 'kaihe', '等': 'deng',
+				'声調': 'tone', '攝': 'tail', '声符': 'shengfu', '韻部': 'yunbu', 
+				'拟音': 'ipa', '王力': 'wl', '李方桂': 'lfg', '白一平': 'byp',
+				'白一平-沙加爾': 'byps', '鄭張尚芳': 'zzsf'};
+	
+	let conditions = $('ul#conditions li').toArray(), ranges = $('ul#range li').toArray();
+	conditions.forEach(function (condition) {
+		let avm = condition.textContent.split('：');
+		
+		if (dict[avm[0]] == 'deng' || dict[avm[0]] == 'kaihe' || dict[avm[0]] == 'tone') {
+			$('select#' + dict[avm[0]]).val(avm[1]);
+		} else {
+			$('input#' + dict[avm[0]]).val(avm[1]);
+		}
+	});
+
+	ranges.forEach(function (range) {
+		let avm = range.textContent;
+
+		$('input#' + dict[avm]).prop('checked', true);
+	});
+
 	// Make the continue-search card draggable
 	$(function () {
 		$('div.search-card').draggable();
-	})	
+	});	
 
+	// Close the card
+	$('button#close').click(function () {
+		$('div.search-card').hide();
+	});
 })

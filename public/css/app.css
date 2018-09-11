@@ -8571,6 +8571,7 @@ div.main-page div#continue-card {
   -webkit-box-shadow: 0 0 0.5em #dedede;
           box-shadow: 0 0 0.5em #dedede;
   z-index: 2;
+  display: none;
 }
 
 div.main-page div#continue-card h4 {
