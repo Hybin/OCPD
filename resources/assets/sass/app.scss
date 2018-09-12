@@ -576,6 +576,96 @@ div.main-page {
 			}
 		}
 	}
+
+	div#entry-page {
+		padding-top: 0;
+
+		div#operations {
+			text-align: left;
+			background-color: $link-color;
+			height: 12em;
+
+			* {
+				display: inline-block;
+			}
+
+			div#buttons {
+				float: right;
+				position: relative;
+				right: 5%;
+				top: 3.5em;
+
+				button {
+					padding: 0.25em 1.5em;
+					border-radius: 5px;
+					border: 1px solid white;
+				}
+
+				button#update {
+					color: white;
+					margin-right: 0.5em;
+					background-color: $link-color;
+				}
+
+				button#remove {
+					color: $link-color;
+					margin-left: 0.5em;
+					background-color: white;
+				}
+			}
+
+			h3 {
+				color: white;
+				margin: 0;
+				position: relative;
+				left: 5%;
+				top: 2em;
+			}
+		}
+
+		div#specific-info {
+			padding-bottom: 2em;
+
+			span {
+				box-shadow: 0 0 0.05em #dedede;
+				font-size: 3em;
+				border-radius: 100%;
+				background-color: white;
+				padding: 0.25em 0.34em;
+			}
+
+			p {
+				margin: 0;
+				position: relative;
+				text-align: center;
+				top: -1em;
+			}
+
+			table {
+				width: 80%;
+				position: relative;
+				left: 10%;
+				font-size: 1.2em;
+				text-align: left;
+				margin-top: 2em;
+
+				td {
+					padding: 1em 0;
+				}
+			}
+
+			form {
+				padding-top: 2em;
+
+				button {
+					background-color: $link-color;
+					color: white;
+					padding: 0.25em 1.5em;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
 }
 
 

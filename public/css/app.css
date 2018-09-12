@@ -8937,3 +8937,94 @@ div.main-page div#advance-search-page form a {
   margin-left: 1em;
 }
 
+div.main-page div#entry-page {
+  padding-top: 0;
+}
+
+div.main-page div#entry-page div#operations {
+  text-align: left;
+  background-color: #e96378;
+  height: 12em;
+}
+
+div.main-page div#entry-page div#operations * {
+  display: inline-block;
+}
+
+div.main-page div#entry-page div#operations div#buttons {
+  float: right;
+  position: relative;
+  right: 5%;
+  top: 3.5em;
+}
+
+div.main-page div#entry-page div#operations div#buttons button {
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+div.main-page div#entry-page div#operations div#buttons button#update {
+  color: white;
+  margin-right: 0.5em;
+  background-color: #e96378;
+}
+
+div.main-page div#entry-page div#operations div#buttons button#remove {
+  color: #e96378;
+  margin-left: 0.5em;
+  background-color: white;
+}
+
+div.main-page div#entry-page div#operations h3 {
+  color: white;
+  margin: 0;
+  position: relative;
+  left: 5%;
+  top: 2em;
+}
+
+div.main-page div#entry-page div#specific-info {
+  padding-bottom: 2em;
+}
+
+div.main-page div#entry-page div#specific-info span {
+  -webkit-box-shadow: 0 0 0.05em #dedede;
+          box-shadow: 0 0 0.05em #dedede;
+  font-size: 3em;
+  border-radius: 100%;
+  background-color: white;
+  padding: 0.25em 0.34em;
+}
+
+div.main-page div#entry-page div#specific-info p {
+  margin: 0;
+  position: relative;
+  text-align: center;
+  top: -1em;
+}
+
+div.main-page div#entry-page div#specific-info table {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  font-size: 1.2em;
+  text-align: left;
+  margin-top: 2em;
+}
+
+div.main-page div#entry-page div#specific-info table td {
+  padding: 1em 0;
+}
+
+div.main-page div#entry-page div#specific-info form {
+  padding-top: 2em;
+}
+
+div.main-page div#entry-page div#specific-info form button {
+  background-color: #e96378;
+  color: white;
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+}
+

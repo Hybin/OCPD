@@ -8,8 +8,10 @@
 </head>
 <body>
     <header class="navbar">
-        <img id="logo" src="{{ asset('/images/logo-black.png') }}">
-        <h4>上古擬音查詢系統</h4>
+		<a href="/" style="text-decoration: none">
+			<img id="logo" src="{{ asset('/images/logo-black.png') }}">
+			<h4>上古擬音查詢系統</h4>
+		</a>
         <div class="options">
             <a id="advanced-search" href="{{ route('search.advance') }}">高級搜索</a>
 			@if (Auth::check())

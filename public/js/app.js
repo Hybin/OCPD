@@ -11968,6 +11968,54 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('button#close').click(function () {
 		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.search-card').hide();
 	});
+
+	// Specific info page
+	// Rhyme Status
+	var cells = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('td').toArray();
+
+	cells[11].append(cells[10].textContent.split('：')[1][0]);
+
+	function splited(str) {
+		var temp = [];
+		for (var i = 0; i <= str.length; i++) {
+			temp.push(str[i]);
+		}
+		return temp;
+	}
+
+	function stringify(arr) {
+		var str = '';
+		arr.forEach(function (item) {
+			str += item;
+		});
+		return str;
+	}
+
+	var rhymeStat = splited(cells[10].textContent.split('：')[1]);
+
+	cells[12].append(stringify(rhymeStat.slice(1, 4)));
+	cells[13].append(rhymeStat[4]);
+	cells[14].append(rhymeStat[5]);
+
+	// Pages - Position
+	var code = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'];
+
+	function contains(alpha) {
+		var index = 0;
+		while (index < code.length) {
+			if (alpha == code[index]) return index + 1;else index++;
+		}
+	}
+
+	var position = cells[4].textContent.split('：')[1];
+	var page = stringify(splited(position).slice(0, 3));
+	cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3]) + '列第' + contains(position[4]) + '字';
+
+	// Fill the blanks
+	cells.forEach(function (cell) {
+		var avm = cell.textContent.split('：');
+		if (avm[1] == "") cell.append('<空>');
+	});
 });
 
 /***/ }),
