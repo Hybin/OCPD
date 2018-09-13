@@ -11917,11 +11917,11 @@ window.$ = window.jQuery = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 	// Make the value in empty cells of search results be "<空>"
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('td:empty').text('<空>');
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('table#result-list td:empty').text('<空>');
 
 	// Disable the submit button in advance search page if no input
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.jumbotron').delegate('input', 'mouseleave', function () {
-		if (__WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#initial').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#final').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#tail').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#shengfu').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#yunbu').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#ipa').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('select#kaihe option:selected').text() == "開合..." && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('select#deng option:selected').text() == "等..." && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('select#tone option:selected').text() == "声調...") {
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.jumbotron').delegate('form#advance-search input', 'mouseleave', function () {
+		if (__WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search input#initial').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search input#final').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search input#tail').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search input#shengfu').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search input#yunbu').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search input#ipa').val().trim().length == 0 && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search select#kaihe option:selected').text() == "開合..." && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search select#deng option:selected').text() == "等..." && __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#advance-search select#tone option:selected').text() == "声調...") {
 			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#advance-search-page button').prop('disabled', true);
 			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#advance-search-page button').css('background-color', '#616161');
 		} else {
@@ -11947,16 +11947,16 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 		var avm = condition.textContent.split('：');
 
 		if (dict[avm[0]] == 'deng' || dict[avm[0]] == 'kaihe' || dict[avm[0]] == 'tone') {
-			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('select#' + dict[avm[0]]).val(avm[1]);
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#continue-card select#' + dict[avm[0]]).val(avm[1]);
 		} else {
-			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#' + dict[avm[0]]).val(avm[1]);
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#continue-card input#' + dict[avm[0]]).val(avm[1]);
 		}
 	});
 
 	ranges.forEach(function (range) {
 		var avm = range.textContent;
 
-		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('input#' + dict[avm]).prop('checked', true);
+		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#continue-card input#' + dict[avm]).prop('checked', true);
 	});
 
 	// Make the continue-search card draggable
@@ -11971,9 +11971,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 
 	// Specific info page
 	// Rhyme Status
-	var cells = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('td').toArray();
-
-	cells[11].append(cells[10].textContent.split('：')[1][0]);
+	var cells = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('table#properties td').toArray();
 
 	function splited(str) {
 		var temp = [];
@@ -11991,30 +11989,59 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 		return str;
 	}
 
-	var rhymeStat = splited(cells[10].textContent.split('：')[1]);
-
-	cells[12].append(stringify(rhymeStat.slice(1, 4)));
-	cells[13].append(rhymeStat[4]);
-	cells[14].append(rhymeStat[5]);
-
-	// Pages - Position
-	var code = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'];
-
-	function contains(alpha) {
+	function contains(alpha, code) {
 		var index = 0;
 		while (index < code.length) {
 			if (alpha == code[index]) return index + 1;else index++;
 		}
 	}
 
-	var position = cells[4].textContent.split('：')[1];
-	var page = stringify(splited(position).slice(0, 3));
-	cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3]) + '列第' + contains(position[4]) + '字';
+	if (cells.length != 0) {
+		cells[11].append(cells[10].textContent.split('：')[1][0]);
 
-	// Fill the blanks
-	cells.forEach(function (cell) {
-		var avm = cell.textContent.split('：');
-		if (avm[1] == "") cell.append('<空>');
+		var rhymeStat = splited(cells[10].textContent.split('：')[1]);
+
+		cells[12].append(stringify(rhymeStat.slice(1, 4)));
+		cells[13].append(rhymeStat[4]);
+		cells[14].append(rhymeStat[5]);
+
+		// Pages - Position
+		var code = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'];
+
+		var position = cells[4].textContent.split('：')[1];
+		var page = stringify(splited(position).slice(0, 3));
+		cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3], code) + '列第' + contains(position[4], code) + '字';
+
+		// Fill the blanks
+		cells.forEach(function (cell) {
+			var avm = cell.textContent.split('：');
+			if (avm[1] == "") cell.append('<空>');
+		});
+	}
+
+	var resultList = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#specific-info a').attr('href');
+
+	if (resultList !== undefined && resultList.match('advance') != 'advance') __WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#specific-info a').hide();
+
+	// Adjust for edit page
+	var rsValue = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#edit-form input#initial').val(),
+	    attrs = ['initial', 'final', 'kaihe', 'deng', 'tone', 'tail'];
+
+	function index(val, arr) {
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] == val) return i;
+		}
+		return -1;
+	}
+
+	if (rsValue !== undefined) {
+		attrs.forEach(function (attr) {
+			if (attr == 'deng' || attr == 'tone' || attr == 'kaihe') __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#edit-form select#' + attr).val(rsValue[index(attr, attrs)]);else __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#edit-form input#' + attr).val(rsValue[index(attr, attrs)]);
+		});
+	}
+
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#edit-form a').click(function () {
+		history.back();
 	});
 });
 

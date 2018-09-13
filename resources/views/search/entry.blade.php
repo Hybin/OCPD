@@ -3,12 +3,17 @@
 
 @section('content')
 <div class="jumbotron" id="entry-page">
+	@include('shared._messages')
 	<div id="operations">
 		<h3>詳細條目</h3>
 		<div id="buttons">
 			@if (Auth::check() && (Auth::user()->position == 'admin-kannrimono-guanliyuan' || Auth::user()->position == 'editor'))
-			<button id="update">修改條目</button>
-			<button id="remove">删除条目</button>
+			<a href="{{ route('entries.edit', $entry->id) }}"><button id="update">修改條目</button></a>
+			<form method="POST" action="{{ route('entries.destroy', $entry->id) }}">
+				{{ csrf_field() }}
+				{{ method_field('DELETE') }}
+				<button id="remove">删除条目</button>
+			</form>
 			@endif
 		</div>
 	</div>
@@ -17,7 +22,7 @@
 		<table id="properties">
 			<tr>
 				<td><strong>今讀：</strong>{{ $entry->modern_pronunciation }}</td>
-				<td><strong>廣韻反切：</strong>{{ $entry->traditional_pronunciation }}</td>
+				<td><strong>廣韻反切：</strong>{{ $entry->traditional_pronunciation }}切</td>
 				<td><strong>声符：</strong>{{ $entry->phonetic_element }}</td>
 				<td><strong>韻部：</strong>{{ $entry->rhyme_element }}</td>
 				<td id="position"g><strong>廣韻頁碼：</strong>{{ $entry->guangyun_position}}</td>
@@ -37,9 +42,7 @@
 				<td><strong>韻尾：</strong></td>
 			</tr>
 		</table>
-		<form method="GET" action="">
-			<button type="submit">返回列表</button>
-		</form>
+		<a href="{{ redirect()->getUrlGenerator()->previous() }}"><button id="back-to-list">返回列表</button></a>
 	</div>
 </div>
 @endsection

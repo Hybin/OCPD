@@ -17,19 +17,19 @@ import 'jquery-ui/ui/widgets/draggable.js';
 
 $(document).ready(function () {
 	// Make the value in empty cells of search results be "<空>"
-	$('td:empty').text('<空>');
+	$('table#result-list td:empty').text('<空>');
 
 	// Disable the submit button in advance search page if no input
-	$('div.jumbotron').delegate('input', 'mouseleave', function () {
-		if ($('input#initial').val().trim().length == 0 &&
-			$('input#final').val().trim().length == 0 &&
-			$('input#tail').val().trim().length == 0 &&
-			$('input#shengfu').val().trim().length == 0	&&
-			$('input#yunbu').val().trim().length == 0 &&
-			$('input#ipa').val().trim().length == 0 &&
-			$('select#kaihe option:selected').text() == "開合..." &&
-			$('select#deng option:selected').text() == "等..." &&
-			$('select#tone option:selected').text() == "声調...") {
+	$('div.jumbotron').delegate('form#advance-search input', 'mouseleave', function () {
+		if ($('form#advance-search input#initial').val().trim().length == 0 &&
+			$('form#advance-search input#final').val().trim().length == 0 &&
+			$('form#advance-search input#tail').val().trim().length == 0 &&
+			$('form#advance-search input#shengfu').val().trim().length == 0	&&
+			$('form#advance-search input#yunbu').val().trim().length == 0 &&
+			$('form#advance-search input#ipa').val().trim().length == 0 &&
+			$('form#advance-search select#kaihe option:selected').text() == "開合..." &&
+			$('form#advance-search select#deng option:selected').text() == "等..." &&
+			$('form#advance-search select#tone option:selected').text() == "声調...") {
 			$('div#advance-search-page button').prop('disabled', true);
 			$('div#advance-search-page button').css('background-color', '#616161');
 		} else {
@@ -54,16 +54,16 @@ $(document).ready(function () {
 		let avm = condition.textContent.split('：');
 		
 		if (dict[avm[0]] == 'deng' || dict[avm[0]] == 'kaihe' || dict[avm[0]] == 'tone') {
-			$('select#' + dict[avm[0]]).val(avm[1]);
+			$('div#continue-card select#' + dict[avm[0]]).val(avm[1]);
 		} else {
-			$('input#' + dict[avm[0]]).val(avm[1]);
+			$('div#continue-card input#' + dict[avm[0]]).val(avm[1]);
 		}
 	});
 
 	ranges.forEach(function (range) {
 		let avm = range.textContent;
 
-		$('input#' + dict[avm]).prop('checked', true);
+		$('div#continue-card input#' + dict[avm]).prop('checked', true);
 	});
 
 	// Make the continue-search card draggable
@@ -78,10 +78,8 @@ $(document).ready(function () {
 
 	// Specific info page
 	// Rhyme Status
-	let cells = $('td').toArray();
-
-	cells[11].append(cells[10].textContent.split('：')[1][0]);
-
+	let cells = $('table#properties td').toArray();
+	
 	function splited(str) {
 		let temp = [];
 		for (let i = 0; i <= str.length; i++) {
@@ -98,17 +96,7 @@ $(document).ready(function () {
 		return str;
 	}
 
-	let rhymeStat = splited(cells[10].textContent.split('：')[1]);
-
-	cells[12].append(stringify(rhymeStat.slice(1, 4)));
-	cells[13].append(rhymeStat[4]);
-	cells[14].append(rhymeStat[5]);
-
-	// Pages - Position
-	let code = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-				'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'];
-
-	function contains(alpha) {
+	function contains(alpha, code) {
 		let index = 0;
 		while (index < code.length) {
 			if (alpha == code[index])
@@ -118,14 +106,59 @@ $(document).ready(function () {
 		}
 	}
 
-	let position = cells[4].textContent.split('：')[1];
-	let page = stringify(splited(position).slice(0,3));
-	cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3]) + '列第' + contains(position[4]) + '字';
+	if (cells.length != 0) {
+		cells[11].append(cells[10].textContent.split('：')[1][0]);
 
-	// Fill the blanks
-	cells.forEach(function (cell) {
-		let avm = cell.textContent.split('：');
-		if (avm[1] == "")
-			cell.append('<空>');
+		let rhymeStat = splited(cells[10].textContent.split('：')[1]);
+
+		cells[12].append(stringify(rhymeStat.slice(1, 4)));
+		cells[13].append(rhymeStat[4]);
+		cells[14].append(rhymeStat[5]);
+
+		// Pages - Position
+		let code = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+					'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'];
+
+
+		let position = cells[4].textContent.split('：')[1];
+		let page = stringify(splited(position).slice(0,3));
+		cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3], code) + '列第' + contains(position[4], code) + '字';
+
+		// Fill the blanks
+		cells.forEach(function (cell) {
+			let avm = cell.textContent.split('：');
+			if (avm[1] == "")
+				cell.append('<空>');
+		});
+	}
+
+	let resultList = $('div#specific-info a').attr('href');
+
+	if (resultList !== undefined && resultList.match('advance') != 'advance')
+		$('div#specific-info a').hide();
+
+	// Adjust for edit page
+	let rsValue = $('form#edit-form input#initial').val(), attrs = ['initial', 'final', 'kaihe', 'deng', 'tone', 'tail'];
+
+	function index(val, arr) {
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i] == val)
+				return i
+		}
+		return -1;
+	}
+	
+	if (rsValue !== undefined) {
+		attrs.forEach(function (attr) {
+			if (attr == 'deng' || attr == 'tone' || attr == 'kaihe')
+				$('form#edit-form select#' + attr).val(rsValue[index(attr, attrs)]);
+			else
+				$('form#edit-form input#' + attr).val(rsValue[index(attr, attrs)]);
+		});
+	}
+
+	$('form#edit-form a').click(function () {
+		history.back();
 	});
+
 })

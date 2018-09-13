@@ -43,7 +43,7 @@
 	    <td>{{ $item->rhythm_status }}</td>
 	    <td>{{ $item->guangyun_position }}</td>
 	    <td>{{ $item->modern_pronunciation }}</td>
-	    <td style="text-align: right;"><a href="{{ route('entries', $item->id) }}">詳細</a></td>
+	    <td style="text-align: right;"><a href="{{ route('entries.show', $item->id) }}">詳細</a></td>
 	</tr>
     @endforeach
 </table>

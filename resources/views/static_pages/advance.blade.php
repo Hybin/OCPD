@@ -8,7 +8,7 @@
 			<p id="rhm-stats" class="marks">按音韻地位查詢</p>
 			<input type="text" name="initial" placeholder="輸入声母進行查詢" class="bar" id="initial"><br>
 			<input type="text" name="final" placeholder="輸入韻母進行查詢" class="bar" id="final"><br>
-			<input type="text" name="tail" placeholder="輸入攝进行查詢" class="bar" id="tail"><br>
+			<input type="text" name="tail" placeholder="輸入攝進行查詢" class="bar" id="tail"><br>
 			<select name="kaihe" class="selection" id="kaihe">
 				<option disabled selected>開合...</option>
 				<option>開</option>

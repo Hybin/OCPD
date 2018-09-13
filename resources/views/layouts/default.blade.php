@@ -16,8 +16,8 @@
             <a id="advanced-search" href="{{ route('search.advance') }}">高級搜索</a>
 			@if (Auth::check())
 				<div class="user-badget">
-					@if (Auth::user()->position == 'admin-kannrimono-guanliyuan')
-						<a href="{{ route('users.index') }}"><p>✻ {{ Auth::user()->name }}</p></a>
+					@if (Auth::user()->position == 'admin-kannrimono-guanliyuan' || Auth::user()->position == 'editor')
+						<a href="{{ route('dashboard.open') }}"><p>✻ {{ Auth::user()->name }}</p></a>
 					@else
 						<p>✻ {{ Auth::user()->name }}</p>
 					@endif

@@ -8372,6 +8372,10 @@ button {
   text-align: center;
 }
 
+p.alert {
+  margin: 0;
+}
+
 /* typography */
 
 h1,
@@ -9015,16 +9019,84 @@ div.main-page div#entry-page div#specific-info table {
 
 div.main-page div#entry-page div#specific-info table td {
   padding: 1em 0;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 
-div.main-page div#entry-page div#specific-info form {
-  padding-top: 2em;
+div.main-page div#entry-page div#specific-info a {
+  text-decoration: none;
 }
 
-div.main-page div#entry-page div#specific-info form button {
+div.main-page div#entry-page div#specific-info button#back-to-list {
   background-color: #e96378;
+  margin-top: 2em;
   color: white;
   padding: 0.25em 1.5em;
   border-radius: 5px;
+}
+
+div.main-page div#edit-page h3 {
+  text-align: left;
+  padding-left: 20%;
+}
+
+div.main-page div#edit-page form {
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+
+div.main-page div#edit-page form label {
+  float: left;
+}
+
+div.main-page div#edit-page form input {
+  width: 100%;
+  margin: 1em 0;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border-color: rgba(255, 255, 255, 0);
+  height: 3em;
+  outline: none;
+  padding-left: 0.5em;
+}
+
+div.main-page div#edit-page form select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  margin: 0.5em 0 1em 0em;
+  width: 32.95%;
+  padding-left: 1em;
+  height: 3em;
+}
+
+div.main-page div#edit-page form select select::-ms-expand {
+  display: none;
+}
+
+div.main-page div#edit-page form button {
+  background-color: #212121;
+  margin-top: 2em;
+  color: white;
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  margin-right: 1em;
+}
+
+div.main-page div#edit-page form a {
+  text-decoration: none;
+  background-color: #e96378;
+  color: white;
+  padding: 0.45em 1.5em;
+  border-radius: 5px;
+  margin-left: 1em;
+  cursor: pointer;
 }
 
