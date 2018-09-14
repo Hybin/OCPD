@@ -3,9 +3,10 @@
 
 @section('content')
 <div class="jumbotron">
+	@include('shared._messages')
     <div class="slogan">
         <img src="{{ asset('/images/deer.png') }}" id="slogan-img">
-        <p>What does /the Ancient Chinese/ say?</p>
+        <p>遂古之初，谁传道之？上下未形，何由考之？</p>
     </div>
     <form action="{{ route('search.simple') }}" method="GET" id="simple-search">
         <input type="text" name="keyword" id="search-bar" placeholder="輸入漢字進行查詢">
