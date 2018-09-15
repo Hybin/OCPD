@@ -43,8 +43,10 @@
     @if (count($items) > 0)
 		@include('board._data')
     @else
+	<div id="error-page">
 		<img src="{{ asset('/images/bear.png') }}" id="error-img">
 		<p id="error-msg">古人的發音太神秘啦！我們也在尋找...</p>
+	</div>
     @endif
 </div>
 @endsection

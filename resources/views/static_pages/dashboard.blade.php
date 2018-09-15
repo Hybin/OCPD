@@ -14,12 +14,13 @@
 		<tr>
 			<td><a href="{{ route('users.index') }}">{{ $users }}</a></td>
 			<td><a href="{{ route('entries.index') }}">{{ $entries }}</a></td>
-			<td><a href="">400</a></td>
+			<td><a href="">{{ $trends->total() }}</a></td>
 		</tr>
 	</table>
 </div>
 
 <div class="dashboard-card" id="trends">
 	<h3>Dashboard / Trands</h3>
+	@include('board._trend')
 </div>
 @endsection

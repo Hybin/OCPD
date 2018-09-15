@@ -28,4 +28,5 @@ Route::delete('logout', 'SessionsController@destroy')->name('logout');
 Route::resource('entries', 'EntriesController');
 
 Route::get('dashboard', 'DashboardController@open')->name('dashboard.open');
+Route::post('dashboard', 'DashboardController@restore')->name('dashboard.restore');
 

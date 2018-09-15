@@ -4,7 +4,7 @@
 @section('content')
 <div class="jumbotron" id="edit-page">
 	<h3>修改條目</h3>
-	<form method="POST" action="{{ route('entries.update', $entry->id) }}" id="edit-form">
+	<form onsubmit="return confirm('確認提交？');" method="POST" action="{{ route('entries.update', $entry->id) }}" id="edit-form">
 		{{ method_field('PATCH') }}
 		{{ csrf_field() }}
 		<label for="kanji">漢字</label><br>

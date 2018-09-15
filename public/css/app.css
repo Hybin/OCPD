@@ -8376,6 +8376,10 @@ p.alert {
   margin: 0;
 }
 
+ul.pagination li a {
+  color: #e96378;
+}
+
 /* typography */
 
 h1,
@@ -8501,7 +8505,7 @@ footer {
   background-color: #212121;
   width: 100%;
   text-align: center;
-  z-index: 2;
+  z-index: 3;
 }
 
 footer p {
@@ -8745,13 +8749,18 @@ div.main-page div#search-condition ul li {
   border-radius: 2.5px;
 }
 
-div.main-page img#error-img {
+div.main-page div#error-page {
+  text-align: center;
+  margin-top: 1em;
+}
+
+div.main-page div#error-page img#error-img {
   width: 300px;
   position: relative;
   top: 5em;
 }
 
-div.main-page p#error-msg {
+div.main-page div#error-page p#error-msg {
   color: #e96378;
   position: relative;
   top: 4em;
@@ -9150,12 +9159,291 @@ div.main-page div#trends {
   float: right;
   position: relative;
   right: 10%;
-  height: 56em;
   margin-bottom: 12em;
+  padding-bottom: 4em;
+  text-align: center;
 }
 
 div.main-page div#trends h3 {
   margin: 0;
-  padding: 2em 2em;
+  padding: 2em 2em 1em 2em;
+  text-align: left;
+}
+
+div.main-page div.users {
+  overflow: scroll;
+  height: 48em;
+  text-align: left;
+  position: relative;
+  width: 80%;
+  left: 10%;
+  padding: 2em 0;
+}
+
+div.main-page div.users li {
+  list-style: none;
+}
+
+div.main-page div.users p {
+  line-height: 2em;
+  margin: 0 0.75em;
+}
+
+div.main-page div.users li * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.main-page div.users hr {
+  width: 100%;
+  border: solid 0.25px #dddddd;
+}
+
+div.main-page div.users div.permissions {
+  float: right;
+  position: relative;
+  top: 6.5px;
+}
+
+div.main-page div.users div.permissions button {
+  background-color: white;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 0.15em 2em;
+}
+
+div.main-page div.users div.permissions button#revoke {
+  color: #e96378;
+  border-color: #e96378;
+}
+
+div.main-page div.users div.permissions button#authorize {
+  color: #b4b2b2;
+  border-color: #b4b2b2;
+}
+
+div.main-page div#entries-list {
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+  margin-top: 1em;
+}
+
+div.main-page div#entries-list table#entries {
+  width: 90%;
+  position: relative;
+  left: 5%;
+  top: 1em;
+}
+
+div.main-page div#entries-list table#entries th {
+  text-align: center;
+}
+
+div.main-page div#entries-list table#entries td {
+  text-align: center;
+}
+
+div.main-page div#operations-lex {
+  text-align: left;
+  position: relative;
+  left: 5%;
+  width: 90%;
+}
+
+div.main-page div#operations-lex h3 {
+  font-weight: bold;
+}
+
+div.main-page div#operations-lex p {
+  color: #aeaeae;
+  font-size: 1em;
+}
+
+div.main-page div#operations-lex a {
+  text-decoration: none;
+}
+
+div.main-page div#operations-lex div#buttons {
+  float: right;
+  position: relative;
+  top: -4em;
+}
+
+div.main-page div#operations-lex div#buttons button {
+  display: inline;
+  margin-left: 1em;
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  color: white;
+}
+
+div.main-page div#operations-lex div#buttons #new {
+  background-color: white;
+  border: solid 1px #949494;
+  color: #949494;
+}
+
+div.main-page div#operations-lex div#buttons #back {
+  background-color: #212121;
+}
+
+div.main-page div#add-page h3 {
+  text-align: left;
+  padding-left: 20%;
+}
+
+div.main-page div#add-page form {
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+
+div.main-page div#add-page form label {
+  float: left;
+}
+
+div.main-page div#add-page form input {
+  width: 100%;
+  margin: 1em 0;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border-color: rgba(255, 255, 255, 0);
+  height: 3em;
+  outline: none;
+  padding-left: 0.5em;
+}
+
+div.main-page div#add-page form select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  margin: 0.5em 0 1em 0em;
+  width: 32.95%;
+  padding-left: 1em;
+  height: 3em;
+}
+
+div.main-page div#add-page form select select::-ms-expand {
+  display: none;
+}
+
+div.main-page div#add-page form button {
+  background-color: #212121;
+  margin-top: 2em;
+  color: white;
+  padding: 0.25em 1.5em;
+  border-radius: 5px;
+  margin-right: 1em;
+}
+
+div.main-page div#add-page form a {
+  text-decoration: none;
+  background-color: #e96378;
+  color: white;
+  padding: 0.45em 1.5em;
+  border-radius: 5px;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+div.main-page div.trend {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  padding: 2em 0 3em 0;
+  -webkit-box-shadow: 0 0 0.5em #dedede;
+          box-shadow: 0 0 0.5em #dedede;
+  text-align: left;
+  margin-top: 1.5em;
+}
+
+div.main-page div.trend * {
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.main-page div.trend div#content {
+  position: relative;
+  left: 2em;
+}
+
+div.main-page div.trend div#content * {
+  display: block;
+}
+
+div.main-page div.trend div#content div#user-info * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.main-page div.trend div#content div#user-info p {
+  font-weight: bold;
+  padding-left: 1em;
+  font-size: 1.2em;
+  color: #e96378;
+}
+
+div.main-page div.trend div#words {
+  position: relative;
+  left: 5em;
+}
+
+div.main-page div.trend div#words p#item {
+  color: white;
+  background-color: #e96378;
+  padding: 0 1em;
+  margin-left: 2.5em;
+  border-radius: 5px;
+}
+
+div.main-page div.trend div#words * {
+  display: inline-block;
+}
+
+div.main-page div.trend p#timestamp {
+  position: relative;
+  left: 5em;
+  top: 1em;
+}
+
+div.main-page div.trend p {
+  margin: 0;
+}
+
+div.main-page div.trend button {
+  border: solid 2px;
+  padding: 0.1em 1em;
+  border-radius: 5px;
+  background-color: white;
+}
+
+div.main-page div.trend button#look-up {
+  color: #212121;
+  border-color: #212121;
+}
+
+div.main-page div.trend button#undo {
+  color: #e96378;
+  border-color: #e96378;
+}
+
+div.main-page div.trend a {
+  float: right;
+  position: relative;
+  right: 2em;
+  text-decoration: none;
+}
+
+div.main-page div.trend form {
+  float: right;
+  position: relative;
+  right: 2em;
 }
 

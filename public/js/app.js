@@ -11918,6 +11918,7 @@ window.$ = window.jQuery = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 	// Make the value in empty cells of search results be "<空>"
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('table#result-list td:empty').text('<空>');
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('table#entries td:empty').text('<空>');
 
 	// Disable the submit button in advance search page if no input
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.jumbotron').delegate('form#advance-search input', 'mouseleave', function () {
@@ -11992,25 +11993,27 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 	function contains(alpha, code) {
 		var index = 0;
 		while (index < code.length) {
-			if (alpha == code[index]) return index + 1;else index++;
+			if (alpha.toUpperCase() == code[index]) return index + 1;else index++;
 		}
 	}
 
 	if (cells.length != 0) {
-		cells[11].append(cells[10].textContent.split('：')[1][0]);
-
 		var rhymeStat = splited(cells[10].textContent.split('：')[1]);
 
-		cells[12].append(stringify(rhymeStat.slice(1, 4)));
-		cells[13].append(rhymeStat[4]);
-		cells[14].append(rhymeStat[5]);
+		if (rhymeStat.length != 1 && rhymeStat[0] !== undefined) {
+			cells[11].append(rhymeStat[0]);
+			cells[12].append(stringify(rhymeStat.slice(1, 4)));
+			cells[13].append(rhymeStat[4]);
+			cells[14].append(rhymeStat[5]);
+		}
 
 		// Pages - Position
 		var code = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'];
 
 		var position = cells[4].textContent.split('：')[1];
 		var page = stringify(splited(position).slice(0, 3));
-		cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3], code) + '列第' + contains(position[4], code) + '字';
+
+		if (position != '' && page != '') cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3], code) + '列第' + contains(position[4], code) + '字';
 
 		// Fill the blanks
 		cells.forEach(function (cell) {
@@ -12021,7 +12024,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 
 	var resultList = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#specific-info a').attr('href');
 
-	if (resultList !== undefined && resultList.match('advance') != 'advance') __WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#specific-info a').hide();
+	if (resultList !== undefined && resultList.match('edit') == 'edit') __WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#specific-info a').hide();
 
 	// Adjust for edit page
 	var rsValue = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#edit-form input#initial').val(),
@@ -12043,6 +12046,53 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#edit-form a').click(function () {
 		history.back();
 	});
+
+	// Back for create page
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#add-form a').click(function () {
+		history.back();
+	});
+
+	// Disable the submit button in create entry page if no input
+	function check() {
+		var i = 0;
+		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#add-form input').each(function () {
+			if (__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).val() == '') i++;
+		});
+
+		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('form#add-form select').each(function () {
+			if (__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).val() == null) i++;
+		});
+
+		if (i == 17) return false;else return true;
+	}
+
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div.jumbotron').delegate('form#add-form input', 'mouseleave', function () {
+		if (!check()) {
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#add-page button').prop('disabled', true);
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#add-page button').css('background-color', '#616161');
+		} else {
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#add-page button').prop('disabled', false);
+			__WEBPACK_IMPORTED_MODULE_0_jquery___default()('div#add-page button').css('background-color', '#212121');
+		}
+	});
+
+	// Dashboard
+	var translator = {
+		'create': '創建了一條記錄',
+		'update': '更新了一條記錄',
+		'delete': '刪除了一條記錄'
+	};
+
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('p#event').each(function () {
+		__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).text(translator[__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).text()]);
+	});
+
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('p#item').each(function () {
+		if (__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).text().split(':')[1] == ' ') __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).append('&lt;空&gt;');
+	});
+
+	// Warnings
+
 });
 
 /***/ }),

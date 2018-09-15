@@ -18,6 +18,7 @@ import 'jquery-ui/ui/widgets/draggable.js';
 $(document).ready(function () {
 	// Make the value in empty cells of search results be "<空>"
 	$('table#result-list td:empty').text('<空>');
+	$('table#entries td:empty').text('<空>');
 
 	// Disable the submit button in advance search page if no input
 	$('div.jumbotron').delegate('form#advance-search input', 'mouseleave', function () {
@@ -99,7 +100,7 @@ $(document).ready(function () {
 	function contains(alpha, code) {
 		let index = 0;
 		while (index < code.length) {
-			if (alpha == code[index])
+			if (alpha.toUpperCase() == code[index])
 				return index + 1;
 			else
 				index++;
@@ -107,13 +108,14 @@ $(document).ready(function () {
 	}
 
 	if (cells.length != 0) {
-		cells[11].append(cells[10].textContent.split('：')[1][0]);
-
 		let rhymeStat = splited(cells[10].textContent.split('：')[1]);
-
-		cells[12].append(stringify(rhymeStat.slice(1, 4)));
-		cells[13].append(rhymeStat[4]);
-		cells[14].append(rhymeStat[5]);
+		
+		if (rhymeStat.length != 1 && rhymeStat[0] !== undefined) {
+			cells[11].append(rhymeStat[0]);
+			cells[12].append(stringify(rhymeStat.slice(1, 4)));
+			cells[13].append(rhymeStat[4]);
+			cells[14].append(rhymeStat[5]);
+		}
 
 		// Pages - Position
 		let code = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
@@ -122,7 +124,9 @@ $(document).ready(function () {
 
 		let position = cells[4].textContent.split('：')[1];
 		let page = stringify(splited(position).slice(0,3));
-		cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3], code) + '列第' + contains(position[4], code) + '字';
+
+		if (position != '' && page != '')
+			cells[4].textContent = '廣韻頁碼：第' + page + '頁第' + contains(position[3], code) + '列第' + contains(position[4], code) + '字';
 
 		// Fill the blanks
 		cells.forEach(function (cell) {
@@ -134,7 +138,7 @@ $(document).ready(function () {
 
 	let resultList = $('div#specific-info a').attr('href');
 
-	if (resultList !== undefined && resultList.match('advance') != 'advance')
+	if (resultList !== undefined && resultList.match('edit') == 'edit')
 		$('div#specific-info a').hide();
 
 	// Adjust for edit page
@@ -160,5 +164,58 @@ $(document).ready(function () {
 	$('form#edit-form a').click(function () {
 		history.back();
 	});
+
+	// Back for create page
+	$('form#add-form a').click(function () {
+		history.back();
+	});
+
+	// Disable the submit button in create entry page if no input
+	function check() {
+		let i = 0;
+		$('form#add-form input').each(function () {
+			if ($(this).val() == '')
+				i++;
+		});
+
+		$('form#add-form select').each(function () {
+			if ($(this).val() == null)
+				i++;
+		});
+
+		if (i == 17)
+			return false;
+		else
+			return true;
+	}
+
+	$('div.jumbotron').delegate('form#add-form input', 'mouseleave', function () {
+		if (!check()) {
+			$('div#add-page button').prop('disabled', true);
+			$('div#add-page button').css('background-color', '#616161');
+		} else {
+			$('div#add-page button').prop('disabled', false);
+			$('div#add-page button').css('background-color', '#212121');
+		}
+	});
+
+	// Dashboard
+	let translator = {
+		'create': '創建了一條記錄',
+		'update': '更新了一條記錄',
+		'delete': '刪除了一條記錄'
+	};
+
+	$('p#event').each(function () {
+		$(this).text(translator[$(this).text()]);
+	});
+
+	$('p#item').each(function () {
+		if ($(this).text().split(':')[1] == ' ')
+			$(this).append('&lt;空&gt;');
+	});
+
+	// Warnings
+
 
 })

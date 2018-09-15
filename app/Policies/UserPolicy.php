@@ -25,5 +25,11 @@ class UserPolicy
 	{
 		return $currentUser->editable === $editor->editable;
 	}
+
+	public function entries(User $currentUser, User $editor)
+	{
+		return $currentUser->editable === $editor->editable;
+	}
+	
 	
 }

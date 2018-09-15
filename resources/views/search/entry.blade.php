@@ -7,9 +7,9 @@
 	<div id="operations">
 		<h3>詳細條目</h3>
 		<div id="buttons">
-			@if (Auth::check() && (Auth::user()->position == 'admin-kannrimono-guanliyuan' || Auth::user()->position == 'editor'))
+			@if (Auth::check() && (Auth::user()->position == 'admin-kannrimono-guanliyuan' || Auth::user()->position == 'editor') && $entry->deleted_at == NULL)
 			<a href="{{ route('entries.edit', $entry->id) }}"><button id="update">修改條目</button></a>
-			<form method="POST" action="{{ route('entries.destroy', $entry->id) }}">
+			<form onsubmit="return confirm('確認刪除條目？');" method="POST" action="{{ route('entries.destroy', $entry->id) }}">
 				{{ csrf_field() }}
 				{{ method_field('DELETE') }}
 				<button id="remove">删除条目</button>

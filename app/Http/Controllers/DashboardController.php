@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Models\User;
 use App\Models\Lexicon;
+use App\Models\Trend;
 
 class DashboardController extends Controller
 {
@@ -23,7 +25,21 @@ class DashboardController extends Controller
 		$users = count(User::all());
 		$entries = count(Lexicon::all());
 
-    	return view('static_pages.dashboard', compact('users', 'entries'));
+		$trends = Trend::paginate(5);
+
+    	return view('static_pages.dashboard', compact('users', 'entries', 'trends'));
     }
     
+	public function restore(Request $request)
+	{
+		$editor = User::find(1);
+		$this->authorize('dashboard', $editor);	
+
+		$entry = Lexicon::withTrashed()->where('id', $request->lex_id)->restore();
+
+		$trend = Trend::where('id', $request->trend_id)->delete();
+
+		return redirect()->route('entries.show', $request->lex_id);
+	}
+	
 }

@@ -4,6 +4,7 @@
 @section('content')
 <div class="jumbotron" style="padding: 0;">
     <div class="users">
+		<h3>用户管理</h3>
         <div id="editors">
             <h3>Editors</h3>
             <ul>
