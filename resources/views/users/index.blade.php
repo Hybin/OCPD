@@ -48,6 +48,7 @@
             @endforeach
             </ul>
         </div>
+		{!! $users->render() !!}
     </div>
 </div>
 @endsection

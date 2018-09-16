@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
+@font-face {
+  font-family: SimsunExtended;
+  src: url("/fonts/SimsunExtended.TTF");
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -8575,6 +8580,10 @@ div.main-page table#result-list td {
   text-align: center;
 }
 
+div.main-page table#result-list td.kanji {
+  font-family: sans-serif, 'SimsunExtended', 'Raleway';
+}
+
 div.main-page div#continue-card {
   width: 30%;
   position: absolute;
@@ -9013,6 +9022,7 @@ div.main-page div#entry-page div#specific-info span {
   border-radius: 100%;
   background-color: white;
   padding: 0.25em 0.34em;
+  font-family: sans-serif, 'SimsunExtended', 'Raleway';
 }
 
 div.main-page div#entry-page div#specific-info p {
@@ -9173,11 +9183,20 @@ div.main-page div#trends h3 {
 div.main-page div.users {
   overflow: scroll;
   height: 48em;
-  text-align: left;
   position: relative;
   width: 80%;
   left: 10%;
   padding: 2em 0;
+}
+
+div.main-page div.users h3,
+div.main-page div.users div#editors,
+div.main-page div.users div#visitors {
+  text-align: left;
+}
+
+div.main-page div.users ul {
+  padding: 0 4em;
 }
 
 div.main-page div.users li {
@@ -9242,6 +9261,10 @@ div.main-page div#entries-list table#entries th {
 
 div.main-page div#entries-list table#entries td {
   text-align: center;
+}
+
+div.main-page div#entries-list table#entries td.kanji {
+  font-family: sans-serif, 'SimsunExtended', 'Raleway';
 }
 
 div.main-page div#operations-lex {
@@ -9401,6 +9424,7 @@ div.main-page div.trend div#words p#item {
   padding: 0 1em;
   margin-left: 2.5em;
   border-radius: 5px;
+  font-family: sans-serif, 'SimsunExtended', 'Raleway';
 }
 
 div.main-page div.trend div#words * {

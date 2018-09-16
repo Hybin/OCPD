@@ -54,7 +54,7 @@ class UsersController extends Controller
 	{
 		$admin = User::find(1);
 		$this->authorize('index', $admin);
-		$users = User::all();
+		$users = User::paginate(20);
 
 		return view('users.index', compact('users'));
 	}

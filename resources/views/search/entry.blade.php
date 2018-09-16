@@ -25,7 +25,7 @@
 				<td><strong>廣韻反切：</strong>{{ $entry->traditional_pronunciation }}切</td>
 				<td><strong>声符：</strong>{{ $entry->phonetic_element }}</td>
 				<td><strong>韻部：</strong>{{ $entry->rhyme_element }}</td>
-				<td id="position"g><strong>廣韻頁碼：</strong>{{ $entry->guangyun_position}}</td>
+				<td id="position"><strong>廣韻頁碼：</strong>{{ $entry->guangyun_position}}</td>
 			</tr>
 			<tr>
 				<td><strong>王力：</strong>{{ $entry->reconstruction_wl }}</td>

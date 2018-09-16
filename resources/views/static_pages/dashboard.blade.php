@@ -20,7 +20,7 @@
 </div>
 
 <div class="dashboard-card" id="trends">
-	<h3>Dashboard / Trands</h3>
+	<h3>Dashboard / Trends</h3>
 	@include('board._trend')
 </div>
 @endsection

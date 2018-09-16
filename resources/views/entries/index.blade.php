@@ -33,7 +33,7 @@
 				@foreach ($items as $key => $item)
 				<tr>		
 					<td style="text-align: left;">{{ $item->id }}</td>
-					<td>{{ rawurldecode($item->cn_character) }}</td>
+					<td class="kanji">{{ rawurldecode($item->cn_character) }}</td>
 					<td>{{ $item->phonetic_element }}</td>
 					<td>{{ $item->rhyme_element }}</td>
 					<td>{{ $item->reconstruction_wl }}</td>

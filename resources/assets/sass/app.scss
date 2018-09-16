@@ -2,6 +2,11 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
+@font-face {
+	font-family: SimsunExtended;
+	src: url('/fonts/SimsunExtended.TTF');
+}
+
 // Variables
 @import "variables";
 
@@ -228,6 +233,10 @@ div.main-page {
 
 		td {
 			text-align: center;
+		}
+
+		td.kanji {
+			font-family: sans-serif, 'SimsunExtended', 'Raleway';
 		}
     }
 
@@ -653,6 +662,7 @@ div.main-page {
 				border-radius: 100%;
 				background-color: white;
 				padding: 0.25em 0.34em;
+				font-family: sans-serif, 'SimsunExtended', 'Raleway';
 			}
 
 			p {
@@ -810,11 +820,20 @@ div.main-page {
 	div.users {
 		overflow: scroll;
 		height: 48em;
-		text-align: left;
 		position: relative;
 		width: 80%;
 		left: 10%;
 		padding: 2em 0;
+
+		h3, div#editors, div#visitors {
+			text-align: left;
+		}
+
+
+
+		ul {
+			padding: 0 4em;
+		}
 
 		li {
 			list-style: none;
@@ -877,6 +896,10 @@ div.main-page {
 
 			td {
 				text-align: center;
+			}
+
+			td.kanji {
+				font-family: sans-serif, 'SimsunExtended', 'Raleway';
 			}
 		}
 	}
@@ -1033,6 +1056,7 @@ div.main-page {
 				padding: 0 1em;
 				margin-left: 2.5em;
 				border-radius: 5px;
+				font-family: sans-serif, 'SimsunExtended', 'Raleway';
 			}
 
 			* {

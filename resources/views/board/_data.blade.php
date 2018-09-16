@@ -25,7 +25,7 @@
     @foreach ($items as $key =>  $item)
 	<tr>		
 	    <td style="text-align: left;">{{ $key + 1 }}</td>
-		<td>{{ rawurldecode($item->cn_character) }}</td>
+		<td class="kanji">{{ rawurldecode($item->cn_character) }}</td>
 		<td>{{ $item->phonetic_element }}</td>
 		<td>{{ $item->rhyme_element }}</td>
 		@if (isset($range) && count($range) >= 0)
