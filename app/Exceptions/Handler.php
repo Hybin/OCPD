@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -50,7 +51,7 @@ class Handler extends ExceptionHandler
     {
         $debug = config('app.debug', false);
 
-        if (empty($debug)) {
+        if (empty($debug) && !($exception instanceof AuthenticationException) {
             return response()->view('shared.info', ['info' => '我们来到了一个未知的地方...', 'url' => '/']);
         }
         

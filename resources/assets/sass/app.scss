@@ -2,11 +2,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-@font-face {
-	font-family: SimsunExtended;
-	src: url('/fonts/SimsunExtended.TTF');
-}
-
 // Variables
 @import "variables";
 
@@ -676,12 +671,11 @@ div.main-page {
 				width: 80%;
 				position: relative;
 				left: 10%;
-				font-size: 1.2em;
 				text-align: left;
-				margin-top: 2em;
+				margin: 2em 2em;
 
 				td {
-					padding: 1em 0;
+					padding: 1em 1em;
 					word-break: keep-all;  // IE
 					white-space: nowrap;   // Chrome, FireFox, Safari
 				}

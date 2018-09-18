@@ -5,6 +5,12 @@
     <title>@yield('title', '首頁') - 上古擬音查詢系統</title>
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/app.js"></script>
+	<style>
+		@font-face {
+			font-family: SimsunExtended;
+			src: url({{ asset('fonts/SimsunExtended.TTF') }});
+		}
+	</style>
 </head>
 <body>
     <header class="navbar">

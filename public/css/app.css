@@ -1,10 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
-@font-face {
-  font-family: SimsunExtended;
-  src: url("/fonts/SimsunExtended.TTF");
-}
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -9036,13 +9031,12 @@ div.main-page div#entry-page div#specific-info table {
   width: 80%;
   position: relative;
   left: 10%;
-  font-size: 1.2em;
   text-align: left;
-  margin-top: 2em;
+  margin: 2em 2em;
 }
 
 div.main-page div#entry-page div#specific-info table td {
-  padding: 1em 0;
+  padding: 1em 1em;
   word-break: keep-all;
   white-space: nowrap;
 }
