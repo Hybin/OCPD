@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>@yield('title', '首頁') - 上古擬音查詢系統</title>
+    <title>@yield('title', '首頁') - 上古漢語擬音系統</title>
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/app.js"></script>
 	<style>
@@ -16,7 +16,7 @@
     <header class="navbar">
 		<a href="/" style="text-decoration: none">
 			<img id="logo" src="{{ asset('/images/logo-black.png') }}">
-			<h4>上古擬音查詢系統</h4>
+			<h4>上古漢語擬音系統</h4>
 		</a>
         <div class="options">
             <a id="advanced-search" href="{{ route('search.advance') }}">高級搜索</a>
