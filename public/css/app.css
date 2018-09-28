@@ -8576,7 +8576,7 @@ div.main-page table#result-list td {
 }
 
 div.main-page table#result-list td.kanji {
-  font-family: sans-serif, 'SimsunExtended', 'Raleway';
+  font-family: sans-serif, 'HanaMinA', 'HanaMinB', 'Raleway';
 }
 
 div.main-page div#continue-card {
@@ -9017,7 +9017,7 @@ div.main-page div#entry-page div#specific-info span {
   border-radius: 100%;
   background-color: white;
   padding: 0.25em 0.34em;
-  font-family: sans-serif, 'SimsunExtended', 'Raleway';
+  font-family: sans-serif, 'HanaMinA', 'HanaMinB', 'Raleway';
 }
 
 div.main-page div#entry-page div#specific-info p {
@@ -9258,7 +9258,7 @@ div.main-page div#entries-list table#entries td {
 }
 
 div.main-page div#entries-list table#entries td.kanji {
-  font-family: sans-serif, 'SimsunExtended', 'Raleway';
+  font-family: sans-serif, 'HanaMinA', 'HanaMinB', 'Raleway';
 }
 
 div.main-page div#operations-lex {
@@ -9418,7 +9418,7 @@ div.main-page div.trend div#words p#item {
   padding: 0 1em;
   margin-left: 2.5em;
   border-radius: 5px;
-  font-family: sans-serif, 'SimsunExtended', 'Raleway';
+  font-family: sans-serif, 'HanaMinA', 'HanaMinB', 'Raleway';
 }
 
 div.main-page div.trend div#words * {
