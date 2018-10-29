@@ -49,11 +49,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        $debug = config('app.debug', false);
+        //$debug = config('app.debug', false);
 
-        if (empty($debug) && !($exception instanceof AuthenticationException) {
-            return response()->view('shared.info', ['info' => '我们来到了一个未知的地方...', 'url' => '/']);
-        }
+        //if (empty($debug) && !($exception instanceof AuthenticationException) {
+        //    return response()->view('shared.info', ['info' => '我们来到了一个未知的地方...', 'url' => '/']);
+        //}
         
         return parent::render($request, $exception);
     }

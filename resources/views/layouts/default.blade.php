@@ -6,10 +6,25 @@
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/app.js"></script>
 	<style>
-		@font-face {
-			font-family: SimsunExtended;
-			src: url({{ asset('fonts/SimsunExtended.TTF') }});
-		}
+            @font-face {
+                font-family: HanaMinA;
+                src: url({{ asset('fonts/HanaMinA.ttf') }}) format('truetype');
+            }
+
+            @font-face {
+                font-family: HanaMinB;
+                src: url({{ asset('fonts/HanaMinB.ttf') }}) format('truetype');
+            }
+
+            @font-face {
+                font-family: SourceHanSerifTC;
+                src: url({{ asset('fonts/SourceHanSerifTC.otf') }}) format('opentype');
+            }
+
+            @font-face {
+                font-family: SourceHanSerifSC;
+                src: url({{ asset('fonts/SourceHanSerifSC.otf') }}) format('opentype');
+            }
 	</style>
 </head>
 <body>
